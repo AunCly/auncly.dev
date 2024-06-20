@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'rs';
+  src:  url('fonts/rs.eot?hsf9p1');
+  src:  url('fonts/rs.eot?hsf9p1#iefix') format('embedded-opentype'),
+    url('fonts/rs.woff2?hsf9p1') format('woff2'),
+    url('fonts/rs.ttf?hsf9p1') format('truetype'),
+    url('fonts/rs.woff?hsf9p1') format('woff'),
+    url('fonts/rs.svg?hsf9p1#rs') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="ico-rs-"], [class*=" ico-rs-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'rs' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-rs-fireworks:before {
+  content: "\e90b";
+}
+.ico-rs-hexagone:before {
+  content: "\e90a";
+}
+.ico-rs-cube:before {
+  content: "\e909";
+}
+.ico-rs-random:before {
+  content: "\e908";
+}
+.ico-rs-other:before {
+  content: "\e900";
+}
+.ico-rs-percent:before {
+  content: "\e901";
+}
+.ico-rs-reward:before {
+  content: "\e902";
+}
+.ico-rs-ranking:before {
+  content: "\e903";
+}
+.ico-rs-distribute:before {
+  content: "\e904";
+}
+.ico-rs-faq:before {
+  content: "\e905";
+}
+.ico-rs-help-files:before {
+  content: "\e906";
+}
+.ico-rs-warning:before {
+  content: "\e907";
+}

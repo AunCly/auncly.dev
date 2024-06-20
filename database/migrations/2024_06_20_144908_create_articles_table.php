@@ -32,6 +32,12 @@ return new class extends Migration
             $table->foreignId('article_id')->constrained()->onDelete('cascade');
         });
 
+        Schema::create('article_category', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->foreignId('article_id')->constrained()->onDelete('cascade');
+        });
+
     }
 
     /**

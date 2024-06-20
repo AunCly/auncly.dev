@@ -1,0 +1,669 @@
+/* A modifier Grouillot */
+
+.lookup.topbar-btn, .lookup.topbar-btn:after, .lookup.topbar-btn:before {
+    color : #3899ec;
+}
+.lookup.topbar-btn input::placeholder{
+    color : #3899ec;
+}
+
+/*.btn {
+    color: #3899ec;
+    border-color: #3899ec;
+}*/
+body {
+    font-family : "Open Sans", Roboto, sans-serif;
+}
+/*
+.bg-primary {
+    background-color : #3899ec !important;
+}
+
+.bg-secondary {
+    background-color : #374351 !important;
+}
+
+.bg-third {
+    background-color : #f9bb30 !important;
+}
+.text-primary {
+    color : #3899ec !important;
+}
+.text-secondary {
+    color : #374351 !important;
+}
+
+.text-third {
+    color : #f9bb30 !important;
+}
+
+.btn-primary {
+    color            : #fff;
+    background-color : #3899ec;
+    border-color     : #3899ec;
+}
+
+.btn-secondary {
+    color            : #fff;
+    background-color : #374351;
+    border-color     : #374351;
+}
+
+.btn-third {
+    color            : #fff;
+    background-color : #f9bb30;
+    border-color     : #f9bb30;
+}
+
+.btn-outline.btn-primary {
+    color        : #3899ec;
+    border-color : #3899ec;
+}
+
+.btn-outline.btn-primary:hover {
+    color            : #fff;
+    background-color : #3899ec;
+    border-color     : #3899ec;
+}
+*/
+.card {
+    border-radius : 5px;
+}
+
+a {
+    color : #3899ec;
+}
+
+.btn-group a i, .btn-group button i {
+    font-size : 1.2rem;
+}
+
+/*.btn-group a,.btn-group button {
+    color: #fff;
+    background-color: #3899ec;
+}*/
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
+    /*   border-top-right-radius: 10rem;
+       border-bottom-right-radius: 10rem;*/
+}
+
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
+    border-left : 1px solid white;
+}
+
+.btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group, .btn-group-vertical .btn + .btn, .btn-group-vertical .btn + .btn-group, .btn-group-vertical .btn-group + .btn, .btn-group-vertical .btn-group + .btn-group {
+    margin-left : -1px;
+    border-left : 1px solid white;
+}
+
+.btn-group > .btn:first-child {
+/*    margin-left               : 0;
+    border-top-left-radius    : 10rem;
+    border-bottom-left-radius : 10rem;*/
+}
+
+.h-45px {
+    height : 45px;
+}
+
+table.table-bordered.dataTable th, table.table-bordered.dataTable td {
+    border-right-width : 0;
+}
+
+#lastconnected_wrapper table.dataTable thead th,
+#lastorders_wrapper table.dataTable thead th {
+    background-color: #dbedfc !important;
+    color:#3899ec;
+}
+
+/*table.datatable thead > tr {*/
+/*    background-color : #374351 ;*/
+/*}*/
+
+table.datatable thead > tr th {
+    font-weight : bold;
+}
+
+table.dataTable thead > tr > th.sorting_asc,
+table.dataTable thead > tr > th.sorting_desc,
+table.dataTable thead > tr > th.sorting,
+table.dataTable thead > tr > td.sorting_asc,
+table.dataTable thead > tr > td.sorting_desc,
+table.dataTable thead > tr > td.sorting {
+    vertical-align : middle;
+    text-align     : left;
+}
+
+table.table-bordered.dataTable th, table.table-bordered.dataTable td {
+    vertical-align : middle;
+}
+
+.menu-submenu {
+    background-color : #374351 !important;
+}
+
+.sidebar-profile .profile-info {
+    margin-top : 0.3rem;
+}
+
+.sidebar .menu.menu-bordery > .menu-item.active > .menu-link::before, .sidebar .menu.menu-bordery > .menu-item:hover > .menu-link::before {
+    background-color : #193d5c;
+}
+
+.sidebar .menu:not(.menu-bordery) > .menu-item.active > .menu-link {
+    background-color : #f9bb30;
+}
+
+.sidebar .menu:not(.menu-bordery) > .menu-item.active > .menu-link i.fa {
+    color : white !important;
+}
+
+.sidebar .menu-submenu .menu-item.active > .menu-link .dot::after, .sidebar .menu-submenu .menu-item:hover > .menu-link .dot::after {
+    background-color : #f9bb30;
+    border-color     : #f9bb30;
+}
+
+.hexagon {
+    position         : relative;
+    width            : 100px;
+    height           : 57.74px;
+    background-color : #374351;
+    margin           : 40px auto;
+    border-left      : solid 6px #ffffff;
+    border-right     : solid 6px #ffffff;
+}
+
+.hexagon:before,
+.hexagon:after {
+    content           : "";
+    position          : absolute;
+    z-index           : 1;
+    width             : 70.71px;
+    height            : 70.71px;
+    -webkit-transform : scaleY(0.5774) rotate(-45deg);
+    -ms-transform     : scaleY(0.5774) rotate(-45deg);
+    transform         : scaleY(0.5774) rotate(-45deg);
+    background-color  : inherit;
+    left              : 8.6447px;
+}
+
+.hexagon:before {
+    top          : -35.3553px;
+    border-top   : solid 8.4853px #ffffff;
+    border-right : solid 8.4853px #ffffff;
+}
+
+.hexagon:after {
+    bottom        : -35.3553px;
+    border-bottom : solid 8.4853px #ffffff;
+    border-left   : solid 8.4853px #ffffff;
+}
+
+.hexagon p {
+    position : absolute;
+}
+
+/* Tintin tu as une correction a faire, pour éviter le décalage sans faire comme fait ici ;) */
+/*.topbar-btn{
+    border-top: 5px solid transparent;
+}*/
+.topbar-btn:hover {
+    /*  border-top-color: #f9bb30;
+      border-top-width: 5px;*/
+}
+
+/* Fin de tintin */
+.lookup::before {
+    left : 15px;
+}
+
+/*.topbar{*/
+/*position: relative;*/
+/*}*/
+
+/*.topbar:before{*/
+/*content: '';*/
+/*background: rgba(77, 82, 89, 0.4);*/
+/*height: 50%;*/
+/*position: absolute;*/
+/*left: 0;*/
+/*top: 50%;*/
+/*transform: translateY(-50%);*/
+/*width: 1px;*/
+/*}*/
+
+/* CYP CYP le meilleur intégrateur du monde !!! */
+.text-red {
+    color : #f96868;
+}
+
+.main-content {
+    padding : 10px 30px 0;
+}
+
+/* Fil d'ariane a droite */
+.breadcrumb {
+    margin-top : 15px;
+}
+
+li.breadcrumb-item {
+    display : inline-block;
+}
+
+/* animation Collapse - Fait par Pierro, attention ne pas blamer Cyprien, qui est, nous le savons tous, un génie (du mal) cf (1èere ligne de ce fichier) */
+.accordion .card-title {
+    padding : 0;
+}
+
+.accordion .card-title label {
+    display       : block;
+    height        : 100%;
+    padding       : 15px 20px;
+    margin-bottom : 0;
+}
+
+/* Participants Animation liste */
+.border-participant {
+    border-radius : 25px;
+    padding       : 2px 9px;
+}
+
+/* Suppression d'un intervalle */
+.remove-interval {
+    position : absolute;
+    top      : 5px;
+    right    : 5px;
+}
+
+/* A surcharger */
+/* A modifier pour que ça calle avec la couleur principal (surement a faire sur d'autres éléments ) */
+.alert-primary hr {
+    border-top-color : #9fcdff;
+}
+/*
+// modif Jira
+input[name="zipcode"],
+input[name="bill_zipcode"] {
+    width : 80px;
+}
+*/
+
+/*
+// modif Jira
+input[name="phone"] {
+    width : 150px;
+}
+*/
+
+select[name="need_lfss"],
+select[name="active"],
+select[name="bill_country"],
+select[name="country"] {
+    display: inline-block;
+    width: 100%; /* auto;  Julien */
+}
+
+/* Affichage des erreurs dans les tableaux d'import */
+.list-errors {
+    display : none;
+}
+
+/* Style select2 */
+.select2-container--default .select2-selection--multiple {
+    border-color  : #ebebeb;
+    border-radius : 2px;
+    color         : #8b95a5;
+}
+
+/* Correction du header */
+.header {
+    margin-bottom    : 0;
+    background-color : #ebeff2 !important;
+}
+
+.header-info {
+    margin : 20px 0 0 0;
+}
+
+.header-title > small {
+    padding-top : 0;
+    font-family : "Open Sans";
+}
+
+/* Correction datatable */
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    justify-content : center;
+}
+
+.row-mass-action {
+    display : none;
+    margin  : 10px 0;
+    /*background-color : #EEEEEE !important;*/
+}
+
+table.dataTable.fixedHeader-floating {
+    z-index : 100;
+}
+
+/* Correction minicolors */
+.minicolors-theme-bootstrap .minicolors-swatch-color {
+    border : 1px solid #000000;
+}
+
+/* hack pagination + btn excel datatable */
+.button-xls {
+    text-align : right !important;
+}
+
+.datatable-pagination {
+    text-align : center;
+}
+
+.datatable-pagination .dataTables_paginate {
+    display : inline-block !important;
+}
+
+/* fix marge des card dans les dropdown menu */
+.card-dropdown {
+    margin-bottom : 0px !important;
+}
+
+/* bottom quickview */
+.quickview-bottom {
+    max-width : inherit;
+    width     : inherit;
+    top       : inherit;
+    height    : 300px;
+    left      : 0;
+    right     : 0;
+    bottom    : -9999px;
+}
+
+.quickview-bottom.reveal {
+    bottom : 0;
+
+}
+
+/* top quickview */
+.quickview-top {
+    max-width : inherit;
+    width     : inherit;
+    top       : inherit;
+    height    : 300px;
+    left      : 0;
+    right     : 0;
+    top       : -9999px;
+}
+
+.quickview-top.reveal {
+    top : 0;
+}
+
+#site #wrapper #wrapper-content #wrapper-page .page-content #bloc-planning .rubrique,
+#site #wrapper #wrapper-content #wrapper-page .page-content #bloc-planning .rubrique h2 {
+    color : #005ca9;
+}
+
+#site #wrapper #wrapper-content #wrapper-page .page-content #bloc-planning .rubrique .content-line .line {
+    background : #005ca9;
+}
+
+/* bootstrap-select dropdown width hack */
+.bootstrap-select .dropdown-menu {
+    width : 100%;
+    left  : 0;
+}
+
+.datepicker-dropdown, .dropdown-menu {
+    z-index : 1000 !important;
+}
+
+/* ui autocomplete */
+.ui-autocomplete {
+    z-index    : 10000 !important;
+    width      : 280px !important;
+    max-height : 350px;
+    overflow-y : auto;
+    overflow-x : hidden;
+}
+
+.ui-autocomplete ul li btn-primary:hover {
+    background-color : #22527c !important;
+    border-color     : #22527c !important;
+}
+.ui-autocomplete li span{
+    color: #3899ec;
+}
+.ui-autocomplete li span.ui-state-active{
+    border: 0;
+    background: none;
+    color: #3899ec;
+}
+
+/* code mirror */
+.CodeMirror {
+    border : 1px solid #ddd;
+}
+
+.btn.mass {
+    margin : 0 5px;
+}
+
+mark {
+    background-color : #f9bb30 !important;
+}
+
+button, html[type=button] {
+    -webkit-appearance : none !important;
+}
+
+.swal2-container {
+    z-index : 5000 !important;
+}
+
+/*****************/
+/*  RESPONSIVE   */
+/*****************/
+@media screen and (max-width : 1024px) {
+    #planning .planning-structure {
+        overflow-y : auto;
+    }
+
+    #planning .planning-overflow {
+        width    : 900px;
+        position : relative;
+    }
+}
+
+.sidebar-folded .sidebar-expand-lg .sidebar-profile,
+.sidebar-folded .sidebar-expand-lg .sidebar-money li p i,
+.sidebar-folded .sidebar-expand-lg .sidebar-money li p span {
+    display : none;
+}
+
+.sidebar-folded .sidebar-expand-lg:hover .sidebar-profile {
+    display : block;
+}
+
+.sidebar-folded .sidebar-expand-lg:hover .sidebar-money li p i,
+.sidebar-folded .sidebar-expand-lg:hover .sidebar-money li p span {
+    display : inline-block;
+}
+
+/* GESTIONNAIRE DE MEDIAS */
+
+.btn-crop-fa {
+    margin: auto;
+}
+
+#content-pic > ul {
+    padding: 0px;
+}
+
+.grid {
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0px;
+}
+
+#content-pic > div.content-pic-pictures > ul {
+    padding-left: 0px;
+}
+
+.grid li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    position: relative;
+}
+
+.grid .figure-pic {
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.grid .figure-pic .img-min {
+    display: block;
+    position: relative;
+}
+
+.grid figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    background: #193d5c;
+    color: #dfe0e1;
+    opacity: 0.2;
+}
+
+.grid figcaption i {
+    padding-right: 10px;
+}
+
+.grid figcaption h3 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.cs-style-3 .figure-pic {
+    overflow: hidden;
+    width: 100%;
+}
+
+.cs-style-3 .figure-pic img {
+    transition: transform 0.4s;
+}
+
+.cs-style-3 .figure-pic:hover img,
+.cs-style-3 .figure-pic.cs-hover img {
+    transform: translateY(-30px);
+}
+
+.cs-style-3 figcaption {
+    height: 40px;
+    width: 100%;
+    top: auto;
+    bottom: 0;
+    opacity: 0;
+    padding: 5px;
+    transform: translateY(100%);
+    transition: transform 0.4s, opacity 0.1s 0.3s;
+    text-align: center;
+}
+
+.cs-style-3 .figure-pic:hover figcaption,
+.cs-style-3 .figure-pic.cs-hover figcaption {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: transform 0.4s, opacity 0.1s;
+}
+
+.figure-pic:hover img {
+}
+
+.modal-image-content {
+    height: 100%;
+    text-align: center;
+}
+
+.folder-icon-content {
+    text-align: center;
+}
+
+#nomoreie {
+    width: 100%;
+    height: 45px;
+    display: block;
+    z-index: 1000;
+    position: absolute;
+    text-align: center;
+    background-color: #cc0000;
+    color: #ffffff;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+#nomoreie a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+#nomoreie .close {
+    cursor: pointer;
+    padding-right: 10px;
+    color: #ffffff;
+    margin-top: -2px;
+    font-size: 25px;
+}
+
+#feedback_money {
+    width: 100% !important;
+    margin: 1rem 0 !important;
+    color: grey !important;
+}
+
+/* MODULE: valid_your_money */
+
+main #wrapper-validate {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+#card-go-validate {
+    margin: 30px 30px 0 30px;
+    padding: 10px;
+}
+.module-valide-your-money .btn-primary  {
+    margin-bottom: 10px;
+}
+.module-valide-your-money img {
+    width: 80px;
+    margin-left: 3vw;
+}
+#goodLookingText {
+    font-size: 0.9rem;
+}
+
+/* SLIDER BRAND logo SIT INSTIT */
+#brands-slider-btn-prev {
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    left: -1vw;
+    top:40%;
+}
+#brands-slider-btn-next {
+    display: block;
+    position: absolute;
+    right: -1vw;
+    top:40%;
+    z-index: 1000;
+}
+
