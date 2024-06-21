@@ -1,11 +1,13 @@
 <?php
 
 use App\Models\Article;
+use App\Models\Project;
 use function Laravel\Folio\name;
 
 name('home');
 
 $articles = Article::all();
+$projects = Project::all();
 
 ?>
 
@@ -58,20 +60,20 @@ $articles = Article::all();
 
     <div class="lg:my-40 md:my-20 max-w-7xl mx-auto grid lg:grid-cols-3 gap-5 md:grid-cols-2 grid-cols-1 px-5">
         <div class="col-span-3 lg:col-span-3 md:col-span-2 col-span-1">
-            <h3 class="text-5xl font-dosis py-5 font-semibold text-center lg:text-left">Articles</h3>
+            <h3 class="text-5xl text-center font-dosis py-5 font-semibold lg:text-left dark:text-zinc-50">Articles</h3>
         </div>
 
         @foreach($articles as $article)
             <a class="dark:bg-zinc-800 bg-white hover:shadow-md rounded-xl p-5 hover:cursor-pointer dark:hover:bg-zinc-700"
-               href="#">
+               href="{{ route('post.show', ['slug' => $article->slug]) }}">
                 <article class="flex flex-col">
-                    <img class="rounded-xl h-150" src="{{ $article->getMedia('main') }}" alt="">
+                    <img class="rounded-xl h-150" src="{{ $article->getFirstMediaUrl('article_main') }}" alt="">
                     <div class="my-2">
                         <span
                             class="dark:text-zinc-50 text-sm text-zinc-400">{{ date('d/m/Y', strtotime($article->created_at)) }}</span>
                         @foreach($article->categories as $category)
                             <span
-                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium dark:bg-indigo-300 dark:text-zinc-900 bg-blue-100 text-blue-800"> {{ $category }} </span>
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium dark:bg-indigo-300 dark:text-zinc-900 bg-blue-100 text-blue-800"> {{ $category->name }} </span>
                         @endforeach
                     </div>
                     <h3 class="dark:text-zinc-50 text-xl font-bold mt-5">{{ $article->title }}</h3>
@@ -84,7 +86,7 @@ $articles = Article::all();
         @endforeach
         <div class="mt-5 lg:col-span-3 md:col-span-2 col-span-1 flex justify-center">
             <a href="/articles"
-               class="max-w-fit dark:text-zinc-900 dark:bg-indigo-300 bg-indigo-600 rounded-xl max-w-fit p-4 text-white"><i
+               class="max-w-fit dark:text-zinc-900 dark:bg-indigo-300 bg-indigo-600 rounded-xl p-4 text-white"><i
                     class="fa-duotone fa-paper-plane mr-2"></i> Voir tous les articles</a>
         </div>
     </div>
@@ -94,11 +96,32 @@ $articles = Article::all();
             <h3 class="text-5xl text-center font-dosis py-5 font-semibold lg:text-left dark:text-zinc-50">Projets</h3>
         </div>
 
-        <a class="hover:cursor-pointer col-span-1 lg:col-span-3 h-96 rounded-xl bg-[url('/public/images/projects/eloyot.png')] bg-cover"></a>
-        <a class="hover:cursor-pointer col-span-1 rounded-xl h-96 bg-[url('/public/images/projects/guess-icon.png')] bg-cover bg-center"></a>
-        <a class="hover:cursor-pointer col-span-1 lg:col-span-2 h-96 rounded-xl bg-[url('/public/images/projects/do_u_rly_knw_fa.png')] bg-cover"></a>
-        <a class="hover:cursor-pointer col-span-1 lg:col-span-2 h-96 rounded-xl bg-[url('/public/images/projects/kordokou.png')] bg-cover"></a>
-        <a class="hover:cursor-pointer col-span-1 rounded-xl h-96 bg-[url('/public/images/projects/guess-word.png')] bg-cover bg-center"></a>
+        @foreach($projects as $project)
+            <a class="dark:bg-zinc-800 bg-white hover:shadow-md rounded-xl p-5 hover:cursor-pointer dark:hover:bg-zinc-700"
+               href="{{ route('post.show', ['slug' => $project->slug]) }}">
+                <article class="flex flex-col">
+                    <img class="rounded-xl h-150" src="{{ $project->getFirstMediaUrl('project_main') }}" alt="">
+                    <div class="my-2">
+                        <span
+                            class="dark:text-zinc-50 text-sm text-zinc-400">{{ date('d/m/Y', strtotime($project->created_at)) }}</span>
+                        @foreach($project->technologies as $technologie)
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium dark:bg-indigo-300 dark:text-zinc-900 bg-blue-100 text-blue-800"> {{ $technologie }} </span>
+                        @endforeach
+                    </div>
+                    <h3 class="dark:text-zinc-50 text-xl font-bold mt-5">{{ $project->title }}</h3>
+                    <p class="dark:text-zinc-50 mt-5">{{ $project->excerpt }}</p>
+                    <div class="mt-5">
+                        <span class="text-indigo-600 dark:text-indigo-300 text-xl font-bold">Lire l'article</span>
+                    </div>
+                </article>
+            </a>
+        @endforeach
+        <div class="mt-5 lg:col-span-3 md:col-span-2 col-span-1 flex justify-center">
+            <a href="/articles"
+               class="max-w-fit dark:text-zinc-900 dark:bg-indigo-300 bg-indigo-600 rounded-xl p-4 text-white"><i
+                    class="fa-duotone fa-paper-plane mr-2"></i> Voir tous les articles</a>
+        </div>
 
     </div>
 

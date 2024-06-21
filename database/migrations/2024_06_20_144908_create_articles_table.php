@@ -12,12 +12,6 @@ return new class extends Migration
     public function up(): void
     {
 
-        Schema::create('tags', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->timestamps();
-        });
-
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('title');
@@ -29,14 +23,18 @@ return new class extends Migration
 
         Schema::create('article_tag', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tag_id')->constrained()->onDelete('cascade');
-            $table->foreignId('article_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('tag_id');
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('tag_id')->on('tags')->references('id')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('project_id')->on('projects')->references('id')->onUpdate('cascade')->onDelete('cascade');
         });
 
         Schema::create('article_category', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->foreignId('article_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('category_id')->on('categories')->references('id')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('project_id')->on('projects')->references('id')->onUpdate('cascade')->onDelete('cascade');
         });
 
     }

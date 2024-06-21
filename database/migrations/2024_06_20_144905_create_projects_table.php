@@ -17,6 +17,12 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('tags', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+        });
+
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
@@ -28,12 +34,21 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('category_project', function (Blueprint $table) {
+        Schema::create('project_category', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->foreignId('project_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('category_id')->on('categories')->references('id')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('project_id')->on('projects')->references('id')->onUpdate('cascade')->onDelete('cascade');
         });
 
+        Schema::create('project_tag', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('tag_id');
+            $table->unsignedBigInteger('project_id');
+            $table->foreign('tag_id')->on('tags')->references('id')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('project_id')->on('projects')->references('id')->onUpdate('cascade')->onDelete('cascade');
+        });
     }
 
     /**

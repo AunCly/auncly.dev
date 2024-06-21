@@ -165,7 +165,7 @@ $formations = [
 					<h3 class="text-5xl font-dosis py-5 lg:py-0 font-semibold text-center lg:text-left dark:text-zinc-50">Formations</h3>
 
 					@foreach($formations as $formation)
-						<div class="mt-5 lg:bg-transparent bg-white dark:bg-zinc-800 lg:p-0 p-5 rounded-xl dark:text-zinc-50">
+						<div class="rounded-xl mt-5 lg:bg-transparent bg-white dark:bg-zinc-800 lg:p-5 ounded-xl dark:text-zinc-50">
 							<p class="font-raleway font-bold text-lg">{{ $formation['title'] }}</p>
 							<p class="text-sm italic dark:text-zinc-50">{{ $formation['option'] }}</p>
 							<p><span class="md:block dark:text-zinc-50">{{ $formation['school'] }}</span><span class="hidden"> - </span><span class="block md:inline"><i class="fa-duotone fa-location-dot"></i> {{ $formation['place'] }}</span></p>

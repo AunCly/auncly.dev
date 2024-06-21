@@ -43,12 +43,16 @@ class ArticleResource extends Resource
                 DateTimePicker::make('published_at'),
                 Select::make('categories')
                     ->relationship(name: 'categories', titleAttribute: 'name')
+                    ->searchable()
+                    ->preload()
                     ->multiple()
                     ->createOptionForm([
                         Forms\Components\TextInput::make('name')->required(),
                     ]),
                 Select::make('tags')
                     ->relationship(name: 'tags', titleAttribute: 'name')
+                    ->searchable()
+                    ->preload()
                     ->multiple()
                     ->createOptionForm([
                         Forms\Components\TextInput::make('name')->required(),

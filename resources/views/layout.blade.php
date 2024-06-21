@@ -9,6 +9,10 @@
             'title' => 'Blog',
 			'url' => route('articles'),
 		],
+        'projets' => [
+            'title' => 'Projets',
+			'url' => route('projects'),
+		],
     ];
 
 ?>

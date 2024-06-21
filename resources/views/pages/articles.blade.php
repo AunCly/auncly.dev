@@ -2,12 +2,6 @@
 
 use App\Models\Article;
 use function Laravel\Folio\name;
-use League\CommonMark\Environment\Environment;
-use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
-use League\CommonMark\Extension\FrontMatter\FrontMatterExtension;
-use League\CommonMark\Extension\GithubFlavoredMarkdownExtension;
-use Torchlight\Commonmark\V2\TorchlightExtension;
-use League\CommonMark\MarkdownConverter;
 
 name('articles');
 
@@ -26,19 +20,19 @@ $articles = Article::all();
 
         @foreach($articles as $article)
             <a class="bg-white hover:shadow-md rounded-xl p-5 hover:cursor-pointer dark:bg-zinc-800 dark:hover:bg-zinc-700"
-               href="{{ route('post.show', ['slug' => Str::slug($article['extra']['title']) ]) }}">
+               href="{{ route('post.show', ['slug' => Str::slug($article->title) ]) }}">
                 <article class="flex flex-col">
-                    <img class="rounded-xl h-150" src="{{ $article['extra']['image'] }}" alt="">
+                    <img class="rounded-xl h-150" src="{{ $article->getFirstMediaUrl('article_main') }}" alt="">
                     <div class="my-2">
                         <span
-                            class="dark:text-zinc-50 text-sm text-zinc-400 font-dosis mr-5">{{ date('d/m/Y', strtotime($article['extra']['date'])) }}</span>
-                        @foreach($article['extra']['categories'] as $category)
+                            class="dark:text-zinc-50 text-sm text-zinc-400 font-dosis mr-5">{{ date('d/m/Y', strtotime($article->created_at)) }}</span>
+                        @foreach($article->categories as $category)
                             <span
-                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium dark:bg-sky-200 dark:text-zinc-900 bg-blue-100 text-blue-800"> {{ $category }} </span>
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium dark:bg-sky-200 dark:text-zinc-900 bg-blue-100 text-blue-800"> {{ $category->name }} </span>
                         @endforeach
                     </div>
-                    <h3 class="dark:text-zinc-50 text-xl font-bold mt-5 font-dosis">{{ $article['extra']['title'] }}</h3>
-                    <p class="dark:text-zinc-50 mt-5 font-raleway">{{ $article['extra']['excerpt'] }}</p>
+                    <h3 class="dark:text-zinc-50 text-xl font-bold mt-5 font-dosis">{{ $article->title }}</h3>
+                    <p class="dark:text-zinc-50 mt-5 font-raleway">{{ $article->excerpt }}</p>
                     <div class="mt-5">
                         <span
                             class="font-bold text-xl font-dosis text-indigo-600 dark:text-indigo-300">Lire l'article</span>
