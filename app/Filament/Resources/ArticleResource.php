@@ -8,15 +8,19 @@ use App\Models\Article;
 use App\Models\Category;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\Set;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
 
 class ArticleResource extends Resource
 {
@@ -29,10 +33,13 @@ class ArticleResource extends Resource
         return $form
             ->schema([
                 SpatieMediaLibraryFileUpload::make('main')
-                    ->collection('article')
+                    ->collection('article_main')
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('title')
+                    ->live()
+                    ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
                     ->required(),
+                TextInput::make('slug'),
                 DateTimePicker::make('published_at'),
                 Select::make('categories')
                     ->relationship(name: 'categories', titleAttribute: 'name')
@@ -46,15 +53,15 @@ class ArticleResource extends Resource
                     ->createOptionForm([
                         Forms\Components\TextInput::make('name')->required(),
                     ]),
-                RichEditor::make('excerpt')
+                TextInput::make('excerpt')
                     ->required()
                     ->columnSpanFull(),
-                RichEditor::make('content')
+                MarkdownEditor::make('content')
                     ->required()
                     ->columnSpanFull(),
                 SpatieMediaLibraryFileUpload::make('images')
                     ->multiple()
-                    ->collection('article')
+                    ->collection('article_images')
                     ->columnSpanFull(),
             ]);
     }
