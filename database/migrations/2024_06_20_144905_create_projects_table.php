@@ -31,6 +31,7 @@ return new class extends Migration
             $table->text('content');
             $table->string('duration');
             $table->json('technologies');
+            $table->boolean('is_published')->default(false);
             $table->timestamps();
         });
 
