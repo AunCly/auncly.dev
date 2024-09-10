@@ -111,15 +111,15 @@ $formations = [
 		</div>
 	</div>
 
-	<div class="dark:bg-zinc-800 lg:p-20 lg:my-40 max-w-7xl mx-auto grid lg:grid-cols-4 gap-5 bg-white p-5 rounded-xl md:grid-cols-2 grid-cols-1 lg:rounded-xl md:rounded-none">
+	<div class="p-5 lg:my-40 max-w-7xl mx-auto grid lg:grid-cols-4 gap-5 rounded-xl md:grid-cols-2 grid-cols-1 lg:rounded-xl md:rounded-none">
 
 		<div class="items-center lg:col-span-4 grid grid-cols-1 md:col-span-2 col-span-1">
-			<h2 class="text-5xl text-extrabold font-dosis py-5 col-span-2 font-semibold text-center dark:text-zinc-50">Stack technique</h2>
-			<p class="col-span-2 text-gray-400 font-raleway text-center dark:text-zinc-200">Liste de soutils et logiciels que j'utilise au quotidien dans mon travail ou mes projets personnels.</p>
+			<h2 class="text-5xl text-extrabold font-dosis py-5 col-span-2 font-semibold dark:text-zinc-50">Stack technique</h2>
+			<p class="col-span-2 text-gray-400 font-raleway dark:text-zinc-200">Liste de soutils et logiciels que j'utilise au quotidien dans mon travail ou mes projets personnels.</p>
 		</div>
 
 		@foreach($tools as $tool)
-			<div class="border-2 border-zinc-100 rounded-md p-5 flex flex-col">
+			<div class="bg-white dark:bg-zinc-800 rounded-md p-5 flex flex-col">
 				<span class="dark:hidden text-center"><i class="text-indigo-600 block my-10 text-center text-5xl fa-duotone fa-{{ $tool['icon'] }}"></i></span>
 				<span class="hidden dark:block text-center"><i class="my-10 text-indigo-300 text-center text-5xl fa-duotone fa-{{ $tool['icon'] }}"></i></span>
 				<h3 class="text-center font-dosis font-bold text-xl py-5 dark:text-zinc-50">{{ $tool['title'] }}</h3>
@@ -136,9 +136,6 @@ $formations = [
 
 				@foreach($experiences as $experience)
 					<div class="flex flex-col md:flex-row mt-5 dark:bg-zinc-800 bg-white p-5 rounded-xl">
-						<div class="mr-4 flex-shrink-0 self-center">
-							<img class="bg-white rounded-xl w-16" src="{{ $experience['image'] }}" alt="">
-						</div>
 						<div class="flex flex-col">
 							<span class="flex flex-col dark:text-zinc-50 text-center md:text-left">
 								<span class="text-md font-bold">{{ $experience['title'] }}</span>
@@ -146,7 +143,7 @@ $formations = [
 								<span class="md:text-left">
 									<span>{{ $experience['company'] }}</span>
 									<span>-</span>
-									<span>{{ $experience['place'] }}</span>
+									<span><i class="fa-duotone fa-location-dot"></i> {{ $experience['place'] }}</span>
 								</span>
 							</span>
 							<span class="text-xs dark:text-zinc-50 text-zinc-400 text-center md:text-left">{{ $experience['date'] }}</span>
@@ -163,9 +160,8 @@ $formations = [
 			<div class="grid grid-cols-1 gap-5">
 				<div class="col-span-1">
 					<h3 class="text-5xl font-dosis py-5 lg:py-0 font-semibold text-center lg:text-left dark:text-zinc-50">Formations</h3>
-
 					@foreach($formations as $formation)
-						<div class="rounded-xl mt-5 lg:bg-transparent bg-white dark:bg-zinc-800 lg:p-5 ounded-xl dark:text-zinc-50">
+						<div class="rounded-xl mt-5 bg-white dark:bg-zinc-800 lg:p-5 dark:text-zinc-50">
 							<p class="font-raleway font-bold text-lg">{{ $formation['title'] }}</p>
 							<p class="text-sm italic dark:text-zinc-50">{{ $formation['option'] }}</p>
 							<p><span class="md:block dark:text-zinc-50">{{ $formation['school'] }}</span><span class="hidden"> - </span><span class="block md:inline"><i class="fa-duotone fa-location-dot"></i> {{ $formation['place'] }}</span></p>

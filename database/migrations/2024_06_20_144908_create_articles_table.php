@@ -25,17 +25,17 @@ return new class extends Migration
         Schema::create('article_tag', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('tag_id');
-            $table->unsignedBigInteger('project_id');
+            $table->unsignedBigInteger('article_id');
             $table->foreign('tag_id')->on('tags')->references('id')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('project_id')->on('projects')->references('id')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('article_id')->on('articles')->references('id')->onUpdate('cascade')->onDelete('cascade');
         });
 
         Schema::create('article_category', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('project_id');
+            $table->unsignedBigInteger('article_id');
             $table->foreign('category_id')->on('categories')->references('id')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('project_id')->on('projects')->references('id')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('article_id')->on('articles')->references('id')->onUpdate('cascade')->onDelete('cascade');
         });
 
     }
