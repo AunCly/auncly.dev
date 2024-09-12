@@ -13,8 +13,8 @@ $hobbies = [
 ];
 
 $tools = [
-    ['icon' => 'code', 'title' => 'Outils de développement web', 'tools' => 'Php, Laravel, Mysql, Docker, Phpstorm, Html, Css, Tailwind'],
-    ['icon' => 'mobile', 'title' => 'Outils de développement mobile', 'tools' => 'Dart, Flutter, Android Studio'],
+    ['icon' => 'code', 'title' => 'Développement web', 'tools' => 'Php, Laravel, Mysql, Docker, Phpstorm, Html, Css, Tailwind'],
+    ['icon' => 'mobile', 'title' => 'Développement mobile', 'tools' => 'Dart, Flutter, Android Studio'],
     ['icon' => 'chair-office', 'title' => 'Matériel', 'tools' => 'MacBook Pro M1 16", Magic Mouse, Double écrans, Casque Marshall'],
     ['icon' => 'palette', 'title' => 'Design et Productivité', 'tools' => 'Figma, Adobe Photoshop, Adobe Illustrator, Notion'],
 ];
@@ -22,7 +22,7 @@ $tools = [
 $experiences = [
     [
         'image' => 'images/works/rhinos.png',
-        'title' => 'CDI Développeur Web',
+        'title' => 'Développeur Web',
         'company' => 'Groupe Rhinos',
         'date' => 'Août 2017 - Maintenant',
 	    'place' => 'La Rochelle (17)',
@@ -36,7 +36,7 @@ $experiences = [
 	],
     [
         'image' => 'images/works/oddn.svg',
-        'title' => 'CDI Développeur Web',
+        'title' => 'Développeur Web',
         'company' => 'Des images et des mots',
         'date' => 'Nov 2014 à Nov 2016',
 	    'place' => 'Redon (35)',
@@ -48,7 +48,7 @@ $experiences = [
     ],
     [
         'image' => 'images/works/agencehorizon.png',
-        'title' => 'Stage Développeur Web',
+        'title' => 'Développeur Web',
         'company' => 'Agence Horizon',
         'date' => 'Avril 2014 à Septembre 2014',
 	    'place' => 'Quimper (29)',
@@ -66,18 +66,21 @@ $formations = [
 	    'option' => 'Option gestion de projet Multimédia',
 	    'school' => 'IUT de Bayonne et du pays basque',
 	    'place' => 'Anglet (64)',
+        'date' => '2013',
     ],
     [
         'title' => 'DUT Services et réseaux de communication',
         'option' => 'Option Informatique avancée',
         'school' => 'IUT Paul Sabatier Toulouse III',
         'place' => 'Tarbes (65)',
+        'date' => '2012',
     ],
     [
         'title' => 'Baccalauréat Scientifique',
         'option' => 'Option Physique Chimie',
         'school' => 'Lycée Michelet',
         'place' => 'Lannemezan (65)',
+        'date' => '2009',
     ],
 ];
 
@@ -88,7 +91,7 @@ $formations = [
 @section('content')
 
 	<div class="max-w-7xl mx-auto grid lg:grid-cols-3 grid-cols-1 lg:items-center md:px-5 lg:justify-items-start md:justify-items-center p-5">
-		<h2 class="dark:text-zinc-50 text-5xl font-dosis py-5 lg:col-span-3 col-span-1 font-semibold text-center lg:text-left">En bref</h2>
+		<h2 class="dark:text-zinc-50 text-5xl font-title py-5 lg:col-span-3 col-span-1 font-semibold text-center lg:text-left">En bref</h2>
 		<div class="lg:pr-40 lg:col-span-2 col-span-1 lg:order-1 order-2 lg:p-0 p-5">
 			<p class="dark:text-zinc-50 text-zinc-600 font-normal py-5 font-raleway md:text-lg">
 				Je suis Aurélien Clugery (AunCly) développeur web d’origine pyrénéenne vivant à La Rochelle (17).
@@ -111,77 +114,86 @@ $formations = [
 		</div>
 	</div>
 
-	<div class="p-5 lg:my-40 max-w-7xl mx-auto grid lg:grid-cols-4 gap-5 rounded-xl md:grid-cols-2 grid-cols-1 lg:rounded-xl md:rounded-none">
+	<div class="p-5 max-w-7xl mx-auto grid lg:grid-cols-4 gap-5 rounded-xl md:grid-cols-2 grid-cols-1 lg:rounded-xl md:rounded-none mt-32">
 
 		<div class="items-center lg:col-span-4 grid grid-cols-1 md:col-span-2 col-span-1">
-			<h2 class="text-5xl text-extrabold font-dosis py-5 col-span-2 font-semibold dark:text-zinc-50">Stack technique</h2>
+			<h2 class="text-5xl text-extrabold font-title py-5 col-span-2 font-semibold dark:text-zinc-50">Stack technique</h2>
 			<p class="col-span-2 text-gray-400 font-raleway dark:text-zinc-200">Liste de soutils et logiciels que j'utilise au quotidien dans mon travail ou mes projets personnels.</p>
 		</div>
 
 		@foreach($tools as $tool)
 			<div class="bg-white dark:bg-zinc-800 rounded-md p-5 flex flex-col">
-				<span class="dark:hidden text-center"><i class="text-indigo-600 block my-10 text-center text-5xl fa-duotone fa-{{ $tool['icon'] }}"></i></span>
-				<span class="hidden dark:block text-center"><i class="my-10 text-indigo-300 text-center text-5xl fa-duotone fa-{{ $tool['icon'] }}"></i></span>
-				<h3 class="text-center font-dosis font-bold text-xl py-5 dark:text-zinc-50">{{ $tool['title'] }}</h3>
+				<span class="dark:hidden text-center"><i class="text-blue-800 block my-10 text-center text-5xl fa-duotone fa-{{ $tool['icon'] }}"></i></span>
+				<span class="hidden dark:block text-center"><i class="my-10 text-blue-300 text-center text-5xl fa-duotone fa-{{ $tool['icon'] }}"></i></span>
+				<h3 class="text-center font-title font-semibold text-xl py-5 dark:text-zinc-50">{{ $tool['title'] }}</h3>
 				<p class="text-center font-raleway dark:text-zinc-50">{{ $tool['tools'] }}</p>
 			</div>
 		@endforeach
 
 	</div>
 
-	<div class="flex flex-col">
-		<div class="max-w-7xl mx-auto grid lg:grid-cols-3 md:gap-20 grid-cols-1 p-5">
-			<div class="lg:col-span-2 md:col-span-1">
-				<h2 class="text-5xl font-dosis lg:py-0 py-5 font-semibold text-center lg:text-left dark:text-zinc-50">Expériences</h2>
 
-				@foreach($experiences as $experience)
-					<div class="flex flex-col md:flex-row mt-5 dark:bg-zinc-800 bg-white p-5 rounded-xl">
-						<div class="flex flex-col">
-							<span class="flex flex-col dark:text-zinc-50 text-center md:text-left">
-								<span class="text-md font-bold">{{ $experience['title'] }}</span>
-								<span class="hidden"> - </span>
-								<span class="md:text-left">
-									<span>{{ $experience['company'] }}</span>
-									<span>-</span>
-									<span><i class="fa-duotone fa-location-dot"></i> {{ $experience['place'] }}</span>
-								</span>
-							</span>
-							<span class="text-xs dark:text-zinc-50 text-zinc-400 text-center md:text-left">{{ $experience['date'] }}</span>
-							<ul class="md:list-disc md:list-inside mt-5">
-								@foreach($experience['missions'] as $mission)
-									<li class="mt-1 dark:text-zinc-50">{{ $mission }}</li>
-								@endforeach
-							</ul>
-						</div>
-					</div>
-				@endforeach
+    <div class="max-w-7xl mx-auto mt-32">
+        <h2 class="text-5xl font-title font-semibold dark:text-zinc-50">Expériences</h2>
+        <div class="mt-20">
+            @foreach($experiences as $experience)
+                <div class="grid lg:grid-cols-3 md:gap-20 grid-cols-1 lg:col-span-2 md:col-span-1 mt-20">
+                    <div class="col-span-1">
+                        <span class="text-sm uppercase dark:text-zinc-50 text-zinc-400 text-center md:text-left">{{ $experience['date'] }}</span>
+                        <br>
+                        <span><i class="dark:text-zinc-50 text-zinc-400 fa-duotone fa-location-dot mt-2"></i> <span class="text-sm dark:text-zinc-50 text-zinc-400">{{ $experience['place'] }}</span></span>
+                    </div>
+                    <div class="col-span-2">
+                        <div class="flex flex-col">
+                        <span class="flex flex-col dark:text-zinc-50 text-center md:text-left">
+                            <span class="text-4xl font-title font-semibold">{{ $experience['title'] }}</span>
+                            <span class="text-xl font-title font-semibold dark:text-blue-300 text-blue-800 md:text-left mt-5">{{ $experience['company'] }}</span>
+                        </span>
+                            <ul class="md:list-disc md:list-inside mt-5">
+                                @foreach($experience['missions'] as $mission)
+                                    <li class="mt-1 dark:text-zinc-50">{{ $mission }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
 
-			</div>
-			<div class="grid grid-cols-1 gap-5">
-				<div class="col-span-1">
-					<h3 class="text-5xl font-dosis py-5 lg:py-0 font-semibold text-center lg:text-left dark:text-zinc-50">Formations</h3>
-					@foreach($formations as $formation)
-						<div class="rounded-xl mt-5 bg-white dark:bg-zinc-800 lg:p-5 dark:text-zinc-50">
-							<p class="font-raleway font-bold text-lg">{{ $formation['title'] }}</p>
-							<p class="text-sm italic dark:text-zinc-50">{{ $formation['option'] }}</p>
-							<p><span class="md:block dark:text-zinc-50">{{ $formation['school'] }}</span><span class="hidden"> - </span><span class="block md:inline"><i class="fa-duotone fa-location-dot"></i> {{ $formation['place'] }}</span></p>
-						</div>
-					@endforeach
-				</div>
-				<div class="col-span-1">
-					<h3 class="text-5xl font-dosis py-5 font-semibold text-center lg:text-left dark:text-zinc-50">Centres d'intrêrets</h3>
-					<ul class="lg:list-disc lg:list-inside grid lg:grid-cols-1 grid-cols-1 md:grid-cols-3 list-none lg:gap-2 gap-5">
-						@foreach($hobbies as $hobby)
-							<li class="lg:bg-transparent lg:dark:bg-transparent bg-white dark:bg-zinc-800 lg:p-0 p-5 rounded-xl">
-	                            <i class="block md:hidden fa-duotone dark:text-zinc-50 fa-{{ $hobby['icon'] }}"></i>
-	                            <span class="dark:text-zinc-50">{{ $hobby['title'] }}</span>
-	                        </li>
-						@endforeach
-					</ul>
-				</div>
-			</div>
+        <div class="max-w-7xl mx-auto mt-32">
+            <h2 class="text-5xl font-title font-semibold dark:text-zinc-50">Formations</h2>
+            <div class="mt-20">
+                @foreach($formations as $formation)
+
+                    <div class="grid lg:grid-cols-3 md:gap-20 grid-cols-1 lg:col-span-2 md:col-span-1 mt-8">
+                        <div class="col-span-1">
+                            <span class="text-sm uppercase dark:text-zinc-50 text-zinc-400 text-center md:text-left">{{ $formation['date'] }}</span>
+                            <br>
+                            <span><i class="dark:text-zinc-50 text-zinc-400 fa-duotone fa-location-dot mt-2"></i> <span class="text-sm dark:text-zinc-50 text-zinc-400">{{ $formation['place'] }}</span></span>
+                        </div>
+                        <div class="col-span-2">
+                            <div class="rounded-xl mt-5 lg:p-5 dark:text-zinc-50">
+                                <p class="text-4xl font-title font-semibold">{{ $formation['title'] }}</p>
+                                <p class="text-xl font-title font-semibold dark:text-blue-300 text-blue-800 md:text-left mt-5">{{ $formation['school'] }}</p>
+                                <p class="text-sm italic dark:text-zinc-50 mt-2">{{ $formation['option'] }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+			<div class="mt-20">
+                <h3 class="text-5xl font-title py-5 font-semibold text-center lg:text-left dark:text-zinc-50">Centres d'intrêrets</h3>
+                <div class="grid grid-cols-1 md:grid-cols-6 lg:gap-5 gap-10 mt-5">
+                    @foreach($hobbies as $hobby)
+                        <div class="bg-white dark:bg-zinc-800 rounded-md p-5 flex flex-col">
+                            <span class="dark:hidden text-center"><i class="text-blue-800 block my-10 text-center text-5xl fa-duotone fa-{{ $hobby['icon'] }}"></i></span>
+                            <span class="hidden dark:block text-center"><i class="my-10 text-blue-300 text-center text-5xl fa-duotone fa-{{ $hobby['icon'] }}"></i></span>
+                            <h3 class="text-center font-title font-semibold text-xl py-5 dark:text-zinc-50">{{ $hobby['title'] }}</h3>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
 		</div>
-
-	</div>
 
 @endsection

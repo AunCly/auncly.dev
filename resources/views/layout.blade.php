@@ -28,6 +28,10 @@
 	<!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
 
@@ -37,14 +41,14 @@
 <body class="bg-zinc-50 dark:bg-zinc-900">
 	<div class="container mx-auto md:py-10">
 		<nav class="grid md:grid-cols-2 grid-cols-1 p-3" aria-label="Breadcrumb">
-			<div class="md:justify-self-start md:flex md:flex-col hidden">
-				<span class="text-3xl dark:text-zinc-50">Auncly</span>
+			<a href="{{ url('/') }}" class="md:justify-self-start md:flex md:flex-col hidden">
+				<span class="text-3xl font-title dark:text-zinc-50">Auncly</span>
 				<span class="text-3xl md:text-sm dark:text-zinc-50">Développeur Web et mobile</span>
-			</div>
+			</a>
 			<ul role="list" class="flex md:justify-end justify-center items-center">
 				<li>
 					<div>
-						<a href="/" class="text-xl dark:text-zinc-50 text-black hover:text-indigo-600">
+						<a href="/" class="text-xl dark:hover:text-blue-300 dark:text-zinc-50 text-black hover:text-blue-800">
 							<i class="fa-solid fa-home"></i>
 							<span class="sr-only">Home</span>
 						</a>
@@ -54,7 +58,7 @@
 				@foreach($menus as $alias => $menu)
 					<li>
 						<div class="flex items-center">
-							<a href="{{ $menu['url'] }}" class="text-xl ml-4 dark:text-zinc-50 font-normal text-black-500 hover:text-indigo-600">{{ $menu['title'] }}</a>
+							<a href="{{ $menu['url'] }}" class="font-title text-xl ml-4 dark:text-zinc-50 font-normal dark:hover:text-blue-300 text-black-500 hover:text-blue-800">{{ $menu['title'] }}</a>
 						</div>
 					</li>
 				@endforeach
@@ -62,11 +66,11 @@
 				<li>
 					<div class="flex items-center">
 						<div class="px-5">
-							<a class="text-xl enable-dark-mode dark:hidden light:inline text-gray-600 hover:text-indigo-600 font-medium dark:text-red-400 dark:hover:text-gray-500" href="#!">
+							<a class="text-xl enable-dark-mode dark:hidden light:inline text-black-500 hover:text-blue-800 font-medium dark:text-red-400 dark:hover:text-gray-500" href="#!">
 								<i class="dark:hidden dark:text-zinc-50 fa-solid fa-moon"></i>
 							</a>
-							<a class="text-xl disable-dark-mode dark:inline hidden text-gray-600 hover:text-indigo-600 font-medium dark:text-blue-400 dark:hover:text-gray-500" href="#!">
-								<i class="dark:inline dark:text-zinc-50 fa-solid fa-sun"></i>
+							<a class="text-xl dark:hover:text-blue-300 disable-dark-mode dark:inline hidden text-black-500 font-medium dark:text-blue-400" href="#!">
+								<i class="dark:inline dark:hover:text-blue-300 dark:text-zinc-50 fa-solid fa-sun"></i>
 							</a>
 						</div>
 					</div>

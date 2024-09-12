@@ -11,7 +11,12 @@ export default {
         "list-inside",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                title: ['Space Grotesk'],
+                sans: ['Open Sans'],
+            },
+        },
     },
     plugins: [],
 }
