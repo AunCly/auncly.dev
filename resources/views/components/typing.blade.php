@@ -3,7 +3,7 @@
 <span
     x-data="{
         text: '',
-        textArray : ['développeur web', 'développeur mobile'],
+        textArray : ['développeur fullstack', 'développeur web', 'développeur mobile'],
         textIndex: 0,
         charIndex: 0,
         typeSpeed: 110,
@@ -65,7 +65,7 @@
         }, $data.cursorSpeed);
 
     })"
-    class="m-w-fit flex">
+    class="m-w-fit flex py-10 sm:py-0">
     <span class="relative flex items-center justify-center h-24">
         <span class="text-blue-800 dark:text-blue-300 font-black leading-tight" x-text="text"></span>
         <span class="absolute right-0 w-2 -mr-2 bg-black h-3/4" x-ref="cursor"></span>

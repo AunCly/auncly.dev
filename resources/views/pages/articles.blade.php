@@ -5,7 +5,7 @@ use function Laravel\Folio\name;
 
 name('articles');
 
-$articles = Article::all();
+$articles = Article::paginate(10);
 
 ?>
 
@@ -13,33 +13,37 @@ $articles = Article::all();
 
 @section('content')
 
-    <div class="max-w-7xl lg:mx-auto mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 md:mx-5 p-5">
-        <div class="lg:col-span-3 md:col-span-2 col-span-1">
-            <h3 class="text-5xl font-dosis py-5 font-semibold text-center lg:text-left dark:text-zinc-50">Articles</h3>
+    <div class="max-w-7xl mx-auto mt-12 lg:mt-32 p-5">
+        <div class="flex">
+            <h2 class="text-5xl font-title font-semibold dark:text-zinc-50">Articles</h2>
         </div>
+        <div class="mt-20">
+            @foreach($articles->take(3) as $article)
+                <a href="{{ route('post.show', ['slug' => $article->slug]) }}">
+                    <article class="grid pb-10 mt-10 lg:grid-cols-3 md:gap-20 grid-cols-1 lg:col-span-2 md:col-span-1 sm:mt-10 border-b-zinc-200 dark:border-b-zinc-800 border-b-2">
+                        <div class="col-span-1 hidden lg:block ">
+                            <span class="text-sm uppercase dark:text-zinc-50 text-zinc-400 text-left">{{ date('d/m/Y', strtotime($article->created_at)) }}</span>
+                            @foreach($article->categories as $category)
+                                <p class="text-sm uppercase dark:text-zinc-50 text-zinc-400 text-left"> {{ $category->name }} </p>
+                            @endforeach
+                        </div>
+                        <div class="col-span-2">
+                            <span class="flex flex-col dark:text-zinc-50 text-left">
+                                <span class="text-4xl font-title font-semibold">{{ $article['title'] }}</span>
+                                <span class="text-lg md:text-left mt-5">{{ $article->excerpt }}</span>
+                                <button type="button" class="mt-5 max-w-fit cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-blue-700 px-4 py-2 text-sm font-medium tracking-wide text-blue-700 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-blue-300 dark:text-blue-300 dark:focus-visible:outline-blue-800"><i class="fa-duotone fa-paper-plane mr-2"></i> Lire l'article</button>
+                            </span>
+                        </div>
+                    </article>
 
-        @foreach($articles as $article)
-            <a class="bg-white hover:shadow-md rounded-xl p-5 hover:cursor-pointer dark:bg-zinc-800 dark:hover:bg-zinc-700"
-               href="{{ route('post.show', ['slug' => Str::slug($article->title) ]) }}">
-                <article class="flex flex-col">
-                    <img class="rounded-xl h-150" src="{{ $article->getFirstMediaUrl('article_main') }}" alt="">
-                    <div class="my-2">
-                        <span
-                            class="dark:text-zinc-50 text-sm text-zinc-400 font-dosis mr-5">{{ date('d/m/Y', strtotime($article->created_at)) }}</span>
-                        @foreach($article->categories as $category)
-                            <span
-                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium dark:bg-sky-200 dark:text-zinc-900 bg-blue-100 text-blue-800"> {{ $category->name }} </span>
-                        @endforeach
-                    </div>
-                    <h3 class="dark:text-zinc-50 text-xl font-bold mt-5 font-dosis">{{ $article->title }}</h3>
-                    <p class="dark:text-zinc-50 mt-5 font-raleway">{{ $article->excerpt }}</p>
-                    <div class="mt-5">
-                        <span
-                            class="font-bold text-xl font-dosis text-indigo-600 dark:text-indigo-300">Lire l'article</span>
-                    </div>
-                </article>
-            </a>
-        @endforeach
+                </a>
+            @endforeach
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-12">
+        <div class="flex justify-end">
+            {{ $articles->links() }}
+        </div>
     </div>
 
 @endsection

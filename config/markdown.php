@@ -12,7 +12,7 @@ return [
             Heading::class => [
                 'class' => static function (Heading $node) {
                     if ($node->getLevel() === 2) {
-                        return ['font-dosis', 'dark:text-indigo-300', 'text-indigo-600', 'text-4xl', 'font-bold', 'my-5'];
+                        return ['font-title', 'dark:text-blue-300', 'text-bleu-800', 'text-xl', 'font-bold', 'my-5'];
                     } else {
                         return null;
                     }
@@ -22,7 +22,7 @@ return [
                 'class' => 'table',
             ],
             Paragraph::class => [
-                'class' => ['font-raleway dark:text-zinc-50 mt-5 text-lg text-black leading-8'],
+                'class' => ['dark:text-zinc-50 mt-5 text-black'],
             ],
             Link::class => [
                 'class' => 'btn btn-link',
