@@ -5,7 +5,7 @@ use function Laravel\Folio\name;
 
 name('articles');
 
-$articles = Article::where('is_published', 1)->paginate(10);
+$articles = Article::where('is_published', 1)->orderBy('published_at', 'desc')->paginate(10);
 
 ?>
 

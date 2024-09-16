@@ -6,7 +6,7 @@ use function Laravel\Folio\name;
 
 name('home');
 
-$articles = Article::all();
+$articles = Article::where('is_published', 1)->orderBy('published_at', 'desc')->get();
 $projects = Project::all();
 
 ?>
@@ -69,7 +69,7 @@ $projects = Project::all();
                 <a href="{{ route('post.show', ['slug' => $article->slug]) }}">
                     <article class="grid pb-10 mt-10 lg:grid-cols-3 md:gap-20 grid-cols-1 lg:col-span-2 md:col-span-1 sm:mt-10 border-b-zinc-200 dark:border-b-zinc-800 border-b-2">
                         <div class="col-span-1 hidden lg:block ">
-                            <span class="text-sm uppercase dark:text-zinc-50 text-zinc-400 text-left">{{ date('d/m/Y', strtotime($article->created_at)) }}</span>
+                            <span class="text-sm uppercase dark:text-zinc-50 text-zinc-400 text-left">{{ date('d/m/Y', strtotime($article->published_at)) }}</span>
                             @foreach($article->categories as $category)
                                 <p class="text-sm uppercase dark:text-zinc-50 text-zinc-400 text-left"> {{ $category->name }} </p>
                             @endforeach
