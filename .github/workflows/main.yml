@@ -1,0 +1,80 @@
+name: Laravel
+
+on:
+  push:
+    branches: [ "main" ]
+
+env:
+  RELEASE_DATE: $(date +%Y%m%d%H%M%S)
+  BASE_DIR: /var/www/auncly.dev/http
+
+jobs:
+  laravel-cicd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: shivammathur/setup-php@15c43e89cdef867065b0213be354c2841860869e
+        with:
+          php-version: '8.1'
+      - uses: actions/checkout@v3
+      - name: Création d'une nouvelle variable environnement
+        run: echo "NEW_RELEASE_DIR=${{ env.BASE_DIR }}/releases/${{ env.RELEASE_DATE }}" >> $GITHUB_ENV
+      - name: Installation des dépendances composer
+        run: composer install --prefer-dist --no-scripts -q -o
+      - name: Copie du fichier environnement
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+      - name: Nettoyage des caches
+        run: php artisan optimize:clear
+      - uses: actions/setup-node@v4
+        with:
+          node-version: latest
+      - name: Installation des dépendances npm
+        run: npm install && npm run build
+      - run: which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
+      - name: Copie de la clé ssh depuis github secret vers ~/.ssh/id_rsa
+        run: |
+          eval $(ssh-agent -s)
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
+          chmod 400 ~/.ssh/id_rsa
+      - name: Copie du code source sur le serveur distant via rsync
+        run: |
+          rsync -avz --exclude '.github' --exclude '.git' --relative ./ -e "ssh -i ~/.ssh/id_rsa -T -o StrictHostKeyChecking=no -p ${{ secrets.SSH_PORT }}" ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:"${{ env.NEW_RELEASE_DIR }}"
+      - name: Connexion au serveur distant via ssh et création des liens symboliques
+        uses: appleboy/ssh-action@v0.1.8
+        env:
+          A_NEW_RELEASE_DIR: ${{ env.NEW_RELEASE_DIR }}
+          A_BASE_DIR: ${{ env.BASE_DIR }}
+        with:
+          envs: A_NEW_RELEASE_DIR, A_BASE_DIR
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            echo "Mise en maintenance du site"
+            echo "A_BASE_DIR: $A_BASE_DIR"
+            echo "A_NEW_RELEASE_DIR: $A_NEW_RELEASE_DIR"
+            cd "$A_BASE_DIR/current" && php artisan down && cd ..
+            echo "Creating new release directory $A_NEW_RELEASE_DIR"
+            if [ ! -d "$A_BASE_DIR/storage" ]; then
+              echo "Copying storage directory"
+              cp -R "$A_NEW_RELEASE_DIR/storage" "$A_BASE_DIR/storage"
+            fi
+            rm -rf "$A_NEW_RELEASE_DIR/storage"
+            if [ ! -f "$A_BASE_DIR/.env" ]; then
+              if [ -f "$A_NEW_RELEASE_DIR/.env" ]; then
+                echo "Copying .env file"
+                cp "$A_NEW_RELEASE_DIR/.env" "$A_BASE_DIR/.env"
+              else
+                echo "Error: $A_NEW_RELEASE_DIR/.env does not exist."
+              fi
+            fi
+            rm -rf "$A_NEW_RELEASE_DIR/.env"
+            ln -s "$A_BASE_DIR/storage" "$A_NEW_RELEASE_DIR/storage"
+            ln -s "$A_BASE_DIR/.env" "$A_NEW_RELEASE_DIR/.env"
+            ln -s "$A_BASE_DIR/storage/app/public" "$A_NEW_RELEASE_DIR/public/storage"
+            ln -sfn "$A_NEW_RELEASE_DIR" "$A_BASE_DIR/current"
+            ls -dt "$A_BASE_DIR/releases/"* | tail -n +2 | xargs rm -rf
+            cd "$A_BASE_DIR/current" && php artisan up
