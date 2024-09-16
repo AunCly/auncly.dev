@@ -37,7 +37,7 @@ d'origine Pyrénéenne vivant à La Rochelle" />
     <meta property="og:description" content="Hello ! Je suis Aurélien Clugery,
 développeur fulltstack
 d'origine Pyrénéenne vivant à La Rochelle" />
-    <meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+    <meta property="og:image" content="https://auncly.dev/images/meta.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -46,7 +46,7 @@ d'origine Pyrénéenne vivant à La Rochelle" />
     <meta property="twitter:description" content="Hello ! Je suis Aurélien Clugery,
 développeur fulltstack
 d'origine Pyrénéenne vivant à La Rochelle" />
-    <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+    <meta property="twitter:image" content="https://auncly.dev/images/meta.png" />
 
     <!-- Meta Tags Generated with https://metatags.io -->
 
