@@ -22,7 +22,7 @@ $projects = Project::all();
                     <span class="hidden md:block lg:inline dark:text-zinc-50">Je suis </span>
                     <span class="dark:text-zinc-50">Aurélien Clugery,</span>
                     <x-typing/>
-                    <span class="hidden md:block lg:inline dark:text-zinc-50">d'origine Pyrénéene vivant</span>
+                    <span class="hidden md:block lg:inline dark:text-zinc-50">d'origine Pyrénéenne vivant</span>
                     <span class="dark:text-zinc-50">à</span>
                     <span class="underline decoration-wavy decoration-blue-800 dark:decoration-blue-300 block lg:inline dark:text-zinc-50">La Rochelle</span>
                 </h1>

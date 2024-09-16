@@ -23,16 +23,38 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>{{ config('app.name') }}</title>
+    <!-- Primary Meta Tags -->
+    <title>Auncly - Développeur Fullstack</title>
+    <meta name="title" content="Auncly - Développeur Fullstack" />
+    <meta name="description" content="Hello ! Je suis Aurélien Clugery,
+développeur fulltstack
+d'origine Pyrénéenne vivant à La Rochelle" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://auncly.dev/" />
+    <meta property="og:title" content="Auncly - Développeur Fullstack" />
+    <meta property="og:description" content="Hello ! Je suis Aurélien Clugery,
+développeur fulltstack
+d'origine Pyrénéenne vivant à La Rochelle" />
+    <meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://auncly.dev/" />
+    <meta property="twitter:title" content="Auncly - Développeur Fullstack" />
+    <meta property="twitter:description" content="Hello ! Je suis Aurélien Clugery,
+développeur fulltstack
+d'origine Pyrénéenne vivant à La Rochelle" />
+    <meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+
+    <!-- Meta Tags Generated with https://metatags.io -->
 
 	<!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
 
 	<script src="https://kit.fontawesome.com/27ec9a7a74.js" crossorigin="anonymous"></script>
