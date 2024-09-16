@@ -40,7 +40,7 @@ class ArticleResource extends Resource
                     ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
                     ->required(),
                 TextInput::make('slug'),
-                DateTimePicker::make('published_at'),
+                DateTimePicker::make('created_at'),
                 Select::make('categories')
                     ->relationship(name: 'categories', titleAttribute: 'name')
                     ->searchable()
