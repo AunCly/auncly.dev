@@ -78,4 +78,5 @@ jobs:
             ln -s "$A_BASE_DIR/storage/app/public" "$A_NEW_RELEASE_DIR/public/storage"
             ln -sfn "$A_NEW_RELEASE_DIR" "$A_BASE_DIR/current"
             ls -dt "$A_BASE_DIR/releases/"* | tail -n +2 | xargs rm -rf
+            cd "$A_BASE_DIR/current" && php artisan migrate --force
             cd "$A_BASE_DIR/current" && php artisan up

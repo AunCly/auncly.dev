@@ -42,7 +42,7 @@ render(function (View $view, string $slug) {
                 <div class="relative px-4 sm:px-6 lg:px-8">
                     <div class="text-lg max-w-prose mx-auto">
                         <h1>
-                            <span class="block text-base text-center text-blue-800 font-semibold tracking-wide uppercase dark:text-blue-300">{{ date('d/m/Y', strtotime($article->created_at)) }}</span>
+                            <span class="block text-base text-center text-blue-800 font-semibold tracking-wide uppercase dark:text-blue-300">{{ date('d/m/Y', strtotime($article->published_at)) }}</span>
                             <span class="mt-2 block font-title text-4xl text-center leading-8 font-extrabold tracking-tight sm:text-4xl dark:text-zinc-50">{{ $article->title }}</span>
                         </h1>
                         <p class="font-raleway mt-8 text-center text-lg text-gray-500 leading-8 pb-5 dark:text-zinc-200">{{ $article->excerpt }}</p>

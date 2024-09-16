@@ -19,6 +19,8 @@ class Article extends Model implements HasMedia
         'slug',
         'excerpt',
         'content',
+        'published_at',
+        'is_published',
     ];
 
     public function tags() {

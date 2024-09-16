@@ -9,6 +9,7 @@ use App\Models\Category;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\MarkdownEditor;
+use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -40,7 +41,7 @@ class ArticleResource extends Resource
                     ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
                     ->required(),
                 TextInput::make('slug'),
-                DateTimePicker::make('created_at'),
+                DateTimePicker::make('published_at'),
                 Select::make('categories')
                     ->relationship(name: 'categories', titleAttribute: 'name')
                     ->searchable()
@@ -57,6 +58,13 @@ class ArticleResource extends Resource
                     ->createOptionForm([
                         Forms\Components\TextInput::make('name')->required(),
                     ]),
+                Radio::make('is_published')
+                    ->options([
+                        0 => 'Brouillon',
+                        1 => 'Publié',
+                    ])
+                    ->default('draft')
+                    ->required(),
                 TextInput::make('excerpt')
                     ->required()
                     ->columnSpanFull(),

@@ -5,7 +5,7 @@ use function Laravel\Folio\name;
 
 name('articles');
 
-$articles = Article::paginate(10);
+$articles = Article::where('is_published', 1)->paginate(10);
 
 ?>
 
@@ -18,7 +18,7 @@ $articles = Article::paginate(10);
             <h2 class="text-5xl font-title font-semibold dark:text-zinc-50">Articles</h2>
         </div>
         <div class="mt-20">
-            @foreach($articles->take(3) as $article)
+            @foreach($articles as $article)
                 <a href="{{ route('post.show', ['slug' => $article->slug]) }}">
                     <article class="grid pb-10 mt-10 lg:grid-cols-3 md:gap-20 grid-cols-1 lg:col-span-2 md:col-span-1 sm:mt-10 border-b-zinc-200 dark:border-b-zinc-800 border-b-2">
                         <div class="col-span-1 hidden lg:block ">
