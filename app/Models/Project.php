@@ -15,6 +15,7 @@ class Project extends Model implements HasMedia
     protected $table = 'projects';
 
     protected $fillable = [
+        'user_id',
         'title',
         'slug',
         'excerpt',
@@ -26,6 +27,10 @@ class Project extends Model implements HasMedia
     protected $casts = [
         'technologies' => 'array',
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 
     public function categories() {
         return $this->belongsToMany(Category::class, 'project_category');

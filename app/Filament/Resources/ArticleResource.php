@@ -8,6 +8,7 @@ use App\Models\Article;
 use App\Models\Category;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\RichEditor;
@@ -33,6 +34,7 @@ class ArticleResource extends Resource
     {
         return $form
             ->schema([
+                Hidden::make('user_id')->default(auth()->id()),
                 SpatieMediaLibraryFileUpload::make('main')
                     ->collection('article_main')
                     ->columnSpanFull(),
@@ -81,6 +83,9 @@ class ArticleResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(function (Builder $query) {
+                $query->where('user_id', auth()->id());
+            })
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),

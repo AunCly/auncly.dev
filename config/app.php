@@ -53,6 +53,10 @@ return [
     */
 
     'url' => env('APP_URL', 'http://localhost'),
+    'gaelle_url' => env('APP_GAELLE_URL', 'http://localhost'),
+
+    'domain' => env('APP_DOMAIN', 'http://localhost'),
+    'gaelle_domain' => env('APP_GAELLE_DOMAIN', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------

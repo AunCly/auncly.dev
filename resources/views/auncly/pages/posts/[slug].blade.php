@@ -33,7 +33,7 @@ render(function (View $view, string $slug) {
 
 ?>
 
-@extends('layout')
+@extends('auncly_layout')
 
 @section('content')
     <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 mb-20">
@@ -46,7 +46,8 @@ render(function (View $view, string $slug) {
                             <span class="mt-2 block font-title text-4xl text-center leading-8 font-extrabold tracking-tight sm:text-4xl dark:text-zinc-50">{{ $article->title }}</span>
                         </h1>
                         <p class="font-raleway mt-8 text-center text-lg text-gray-500 leading-8 pb-5 dark:text-zinc-200">{{ $article->excerpt }}</p>
-                        <img class="rounded-xl mb-5 dark:text-zinc-50" src="{{ $article->getFirstMediaUrl('article_main') }}" alt="">
+                        <img class="rounded-xl mb-5 dark:text-zinc-50"
+                             src="{{ $article->getFirstMediaUrl('article_main') }}" alt="">
                         {!! $article->html !!}
                         <div class="hidden md:block mt-10">
                             <livewire:carousel :medias="$article->getMedia('article_images')"></livewire:carousel>

@@ -7,6 +7,7 @@ use App\Filament\Resources\ProjectResource\RelationManagers;
 use App\Models\Project;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\MarkdownEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
@@ -30,7 +31,9 @@ class ProjectResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
+
             ->schema([
+                Hidden::make('user_id')->default(auth()->id()),
                 SpatieMediaLibraryFileUpload::make('main')
                     ->collection('project_main')
                     ->columnSpanFull(),

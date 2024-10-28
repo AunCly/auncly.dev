@@ -36,7 +36,7 @@ render(function (View $view, string $slug) {
 
 ?>
 
-@extends('layout')
+@extends('gaelle_layout')
 
 @section('content')
     <main class="mt-16 mx-auto max-w-7xl px-4 sm:mt-24 mb-20">

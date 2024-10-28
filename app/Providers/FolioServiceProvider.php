@@ -20,10 +20,11 @@ class FolioServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Folio::path(resource_path('views/pages'))->middleware([
-            '*' => [
-                //
-            ],
+        Folio::domain(config('app.gaelle_domain'))->path(resource_path('views/gaelle/pages'))->middleware([
+            '*' => [],
+        ]);
+        Folio::domain(config('app.domain'))->path(resource_path('views/auncly/pages'))->middleware([
+            '*' => [],
         ]);
     }
 }

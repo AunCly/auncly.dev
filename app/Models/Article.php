@@ -15,6 +15,7 @@ class Article extends Model implements HasMedia
     protected $table = 'articles';
 
     protected $fillable = [
+        'user_id',
         'title',
         'slug',
         'excerpt',
@@ -22,6 +23,10 @@ class Article extends Model implements HasMedia
         'published_at',
         'is_published',
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 
     public function tags() {
         return $this->belongsToMany(Tag::class);
