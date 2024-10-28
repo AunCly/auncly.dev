@@ -6,7 +6,7 @@ use function Laravel\Folio\name;
 name('articles');
 
 $articles = Article::whereHas('user', function($query){
-    $query->where('email', 'aurelien.clugery.henaf@gmail.com');
+    $query->where('email', 'aurelien.clugery@gmail.com');
 })->where('is_published', 1)->orderBy('published_at', 'desc')->paginate(10);
 
 ?>
