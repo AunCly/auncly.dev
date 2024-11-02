@@ -21,30 +21,22 @@
 
     <!-- Primary Meta Tags -->
     <title>Gaelle Henaf - Data Analyst</title>
-    <meta name="title" content="Auncly - Développeur Fullstack" />
-    <meta name="description" content="Hello ! Je suis Aurélien Clugery,
-développeur fulltstack
-d'origine Pyrénéenne vivant à La Rochelle" />
+    <meta name="title" content="Gaëlle Henaf - Data Analyst" />
+    <meta name="description" content="Hello ! Je suis Gaëlle Henaf, Data Analyst à La Rochelle" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://auncly.dev/" />
-    <meta property="og:title" content="Auncly - Développeur Fullstack" />
-    <meta property="og:description" content="Hello ! Je suis Aurélien Clugery,
-développeur fulltstack
-d'origine Pyrénéenne vivant à La Rochelle" />
+    <meta property="og:url" content="https://data.gaelle-henaf.fr/" />
+    <meta property="og:title" content="Gaëlle Henaf - Data Analyst" />
+    <meta property="og:description" content="Hello ! Je suis Gaëlle Henaf, Data Analyst à La Rochelle!" />
     <meta property="og:image" content="https://auncly.dev/images/meta.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://auncly.dev/" />
-    <meta property="twitter:title" content="Auncly - Développeur Fullstack" />
-    <meta property="twitter:description" content="Hello ! Je suis Aurélien Clugery,
-développeur fulltstack
-d'origine Pyrénéenne vivant à La Rochelle" />
+    <meta property="twitter:url" content="https://data.gaelle-henaf.fr/" />
+    <meta property="twitter:title" content="Gaëlle Henaf - Data Analyst" />
+    <meta property="twitter:description" content="Hello ! Je suis Gaëlle Henaf, Data Analyst à La Rochelle!" />
     <meta property="twitter:image" content="https://auncly.dev/images/meta.png" />
-
-    <!-- Meta Tags Generated with https://metatags.io -->
 
 	<!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,7 +58,7 @@ d'origine Pyrénéenne vivant à La Rochelle" />
 			<ul role="list" class="flex md:justify-end justify-center items-center">
 				<li>
 					<div>
-						<a href="/" class="text-xl dark:hover:text-blue-300 dark:text-zinc-50 text-black hover:text-blue-800">
+						<a href="/" class="text-xl dark:hover:text-rose-600 dark:text-zinc-50 text-black hover:text-rose-700">
 							<i class="fa-solid fa-home"></i>
 							<span class="sr-only">Home</span>
 						</a>
@@ -76,7 +68,7 @@ d'origine Pyrénéenne vivant à La Rochelle" />
 				@foreach($menus as $alias => $menu)
 					<li>
 						<div class="flex items-center">
-							<a href="{{ $menu['url'] }}" class="font-title text-xl ml-4 dark:text-zinc-50 font-normal dark:hover:text-blue-300 text-black-500 hover:text-blue-800">{{ $menu['title'] }}</a>
+							<a href="{{ $menu['url'] }}" class="font-title text-xl ml-4 dark:text-zinc-50 font-normal dark:hover:text-rose-600 text-black-500 hover:text-rose-700">{{ $menu['title'] }}</a>
 						</div>
 					</li>
 				@endforeach
@@ -84,11 +76,11 @@ d'origine Pyrénéenne vivant à La Rochelle" />
 				<li>
 					<div class="flex items-center">
 						<div class="px-5">
-							<a class="text-xl enable-dark-mode dark:hidden light:inline text-black-500 hover:text-blue-800 font-medium dark:text-red-400 dark:hover:text-gray-500" href="#!">
+							<a class="text-xl enable-dark-mode dark:hidden light:inline text-black-500 hover:text-rose-700 font-medium dark:text-red-400 dark:hover:text-gray-500" href="#!">
 								<i class="dark:hidden dark:text-zinc-50 fa-solid fa-moon"></i>
 							</a>
-							<a class="text-xl dark:hover:text-blue-300 disable-dark-mode dark:inline hidden text-black-500 font-medium dark:text-blue-400" href="#!">
-								<i class="dark:inline dark:hover:text-blue-300 dark:text-zinc-50 fa-solid fa-sun"></i>
+							<a class="text-xl dark:hover:text-rose-600 disable-dark-mode dark:inline hidden text-black-500 font-medium dark:text-blue-400" href="#!">
+								<i class="dark:inline dark:hover:text-rose-600 dark:text-zinc-50 fa-solid fa-sun"></i>
 							</a>
 						</div>
 					</div>

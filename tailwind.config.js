@@ -9,6 +9,7 @@ export default {
     safelist: [
         "list-disc",
         "list-inside",
+        "text-2xl",
     ],
     theme: {
         extend: {

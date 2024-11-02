@@ -140,9 +140,9 @@ $formations = [
         @foreach($tools as $tool)
             <div class="bg-white dark:bg-zinc-800 rounded-md p-5 flex flex-col">
                 <span class="dark:hidden text-center"><i
-                        class="text-blue-800 block my-10 text-center text-5xl fa-duotone fa-{{ $tool['icon'] }}"></i></span>
+                        class="text-rose-700 block my-10 text-center text-5xl fa-duotone fa-{{ $tool['icon'] }}"></i></span>
                 <span class="hidden dark:block text-center"><i
-                        class="my-10 text-blue-300 text-center text-5xl fa-duotone fa-{{ $tool['icon'] }}"></i></span>
+                        class="my-10 text-rose-600 text-center text-5xl fa-duotone fa-{{ $tool['icon'] }}"></i></span>
                 <h3 class="text-center font-title font-semibold text-xl py-5 dark:text-zinc-50">{{ $tool['title'] }}</h3>
                 <p class="text-center font-raleway dark:text-zinc-50">{{ $tool['tools'] }}</p>
             </div>
@@ -169,7 +169,7 @@ $formations = [
                             <span class="flex flex-col dark:text-zinc-50 text-left mt-5 lg:mt-0">
                                 <span class="text-4xl font-title font-semibold">{{ $experience['title'] }}</span>
                                 <span
-                                    class="text-xl font-title font-semibold dark:text-blue-300 text-blue-800 text-left mt-5">{{ $experience['company'] }}</span>
+                                    class="text-xl font-title font-semibold dark:text-rose-600 text-rose-700 text-left mt-5">{{ $experience['company'] }}</span>
                             </span>
                             <ul class="list-disc list-inside mt-5">
                                 @foreach($experience['missions'] as $mission)
@@ -199,7 +199,7 @@ $formations = [
                         <div class="col-span-1 lg:col-span-2">
                             <div class="flex flex-col dark:text-zinc-50 text-left mt-5 lg:mt-0">
                                 <p class="text-4xl font-title font-semibold">{{ $formation['title'] }}</p>
-                                <p class="text-xl font-title font-semibold dark:text-blue-300 text-blue-800 text-left mt-5">{{ $formation['school'] }}</p>
+                                <p class="text-xl font-title font-semibold dark:text-rose-600 text-rose-700 text-left mt-5">{{ $formation['school'] }}</p>
                                 <p class="text-sm italic dark:text-zinc-50 mt-2">{{ $formation['option'] }}</p>
                             </div>
                         </div>
@@ -213,9 +213,9 @@ $formations = [
                     @foreach($hobbies as $hobby)
                         <div class="bg-white dark:bg-zinc-800 rounded-md p-5 flex flex-col">
                             <span class="dark:hidden text-center"><i
-                                    class="text-blue-800 block my-10 text-center text-5xl fa-duotone fa-{{ $hobby['icon'] }}"></i></span>
+                                    class="text-rose-700 block my-10 text-center text-5xl fa-duotone fa-{{ $hobby['icon'] }}"></i></span>
                             <span class="hidden dark:block text-center"><i
-                                    class="my-10 text-blue-300 text-center text-5xl fa-duotone fa-{{ $hobby['icon'] }}"></i></span>
+                                    class="my-10 text-rose-600 text-center text-5xl fa-duotone fa-{{ $hobby['icon'] }}"></i></span>
                             <h3 class="text-center font-title font-semibold text-xl py-5 dark:text-zinc-50">{{ $hobby['title'] }}</h3>
                         </div>
                     @endforeach
