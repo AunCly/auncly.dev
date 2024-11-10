@@ -45,12 +45,12 @@ render(function (View $view, string $slug) {
                 <div class="relative px-4 sm:px-6 lg:px-8">
                     <div class="text-lg max-w-prose mx-auto">
                         <h1>
-                            <span class="block text-base text-center text-rose-700 font-semibold tracking-wide uppercase dark:text-rose-600">{{ date('d/m/Y', strtotime($project->created_at)) }}</span>
+                            <span class="block text-base text-center text-red-700 font-semibold tracking-wide uppercase dark:text-red-600">{{ date('d/m/Y', strtotime($project->created_at)) }}</span>
                             <span class="mt-2 block font-title text-4xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl font-dosis dark:text-zinc-50">{{ $project->title }}</span>
                         </h1>
                         <p class="mt-8 text-center text-lg text-gray-500 leading-8 pb-5 dark:text-zinc-200 font-raleway">{{ $project->excerpt }}</p>
                         <img class="rounded-xl mb-5" src="{{ $project->getFirstMediaUrl('project_main') }}" alt="">
-
+                        <div class="text-justify"></div>
                         {!! $project->html !!}
 
                         <div class="hidden md:block mt-10">
@@ -62,3 +62,10 @@ render(function (View $view, string $slug) {
         </div>
     </main>
 @endsection
+
+
+<style type="text/css">
+    h2 {
+        margin-top: 30px !important;
+    }
+</style>

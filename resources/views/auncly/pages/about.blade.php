@@ -130,7 +130,7 @@ $formations = [
         <div class="items-center lg:col-span-4 grid grid-cols-1 md:col-span-2 col-span-2">
             <h2 class="text-5xl text-extrabold font-title py-5 col-span-2 font-semibold dark:text-zinc-50">Stack
                 technique</h2>
-            <p class="col-span-2 text-gray-400 font-raleway dark:text-zinc-200">Liste de soutils et logiciels que
+            <p class="col-span-2 text-gray-400 font-raleway dark:text-zinc-200">Liste des outils et logiciels que
                 j'utilise au quotidien dans mon travail ou mes projets personnels.</p>
         </div>
 
@@ -205,7 +205,7 @@ $formations = [
             </div>
 
             <div class="mt-5 lg:mt-32 p-5">
-                <h3 class="text-5xl font-title font-semibold text-left dark:text-zinc-50">Centres d'intrêrets</h3>
+                <h3 class="text-5xl font-title font-semibold text-left dark:text-zinc-50">Centres d'intêrets</h3>
                 <div class="grid grid-cols-2 lg:grid-cols-6 lg:gap-5 gap-5 md:gap-10 mt-5">
                     @foreach($hobbies as $hobby)
                         <div class="bg-white dark:bg-zinc-800 rounded-md p-5 flex flex-col">

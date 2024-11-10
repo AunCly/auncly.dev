@@ -3,7 +3,7 @@
 <span
     x-data="{
         text: '',
-        textArray : ['data analyst'],
+        textArray : ['Data Analyst,'],
         textIndex: 0,
         charIndex: 0,
         typeSpeed: 110,
@@ -67,7 +67,7 @@
     })"
     class="m-w-fit flex py-10 sm:py-0">
     <span class="relative flex items-center justify-center h-24">
-        <span class="text-rose-700 dark:text-rose-600 font-black leading-tight" x-text="text"></span>
+        <span class="text-red-600 dark:text-red-600 font-black leading-tight" x-text="text"></span>
         <span class="absolute right-0 w-2 -mr-2 bg-black h-3/4" x-ref="cursor"></span>
     </span>
 </span>
