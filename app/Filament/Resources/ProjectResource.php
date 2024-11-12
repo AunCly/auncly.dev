@@ -31,7 +31,6 @@ class ProjectResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-
             ->schema([
                 Hidden::make('user_id')->default(auth()->id()),
                 SpatieMediaLibraryFileUpload::make('main')
@@ -76,6 +75,9 @@ class ProjectResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->modifyQueryUsing(function (Builder $query) {
+                $query->where('user_id', auth()->id());
+            })
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
