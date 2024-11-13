@@ -39,7 +39,7 @@ return [
                 Heading::class => [
                     'class' => static function (Heading $node) {
                         if ($node->getLevel() === 2) {
-                            return ['font-title', 'dark:text-blue-300', 'text-bleu-800', 'text-xl', 'font-bold', 'my-5'];
+                            return ['font-title', 'dark:text-blue-300', 'text-blue-800', 'text-xl', 'font-bold', 'my-5'];
                         } else {
                             return null;
                         }
@@ -52,7 +52,7 @@ return [
                     'class' => ['dark:text-zinc-50 mt-5 text-black'],
                 ],
                 Link::class => [
-                    'class' => 'btn btn-link',
+                    'class' => 'btn btn-link text-blue-800 dark:text-blue-300',
                     'target' => '_blank',
                 ],
                 ListBlock::class => [
@@ -67,10 +67,10 @@ return [
                 Heading::class => [
                     'class' => static function (Heading $node) {
                         if ($node->getLevel() === 1) {
-                            return ['font-title', 'dark:text-rose-600', 'text-rose-800', 'text-2xl', 'font-bold', 'my-5'];
+                            return ['font-title', 'dark:text-red-600', 'text-red-600', 'text-2xl', 'font-bold', 'my-5'];
                         }
                         elseif ($node->getLevel() === 2) {
-                            return ['font-title', 'dark:text-rose-600', 'text-rose-800', 'text-xl', 'font-bold', 'my-5'];
+                            return ['font-title', 'dark:text-red-600', 'text-red-600', 'text-xl', 'font-bold', 'my-5'];
                         } else {
                             return null;
                         }
@@ -83,7 +83,7 @@ return [
                     'class' => ['dark:text-zinc-50 mt-5 text-black'],
                 ],
                 Link::class => [
-                    'class' => 'btn btn-link',
+                    'class' => 'btn btn-link text-red-600 cursor-pointer',
                     'target' => '_blank',
                 ],
                 ListBlock::class => [
