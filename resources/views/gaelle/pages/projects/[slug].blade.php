@@ -44,8 +44,12 @@ render(function (View $view, string $slug) {
             <div class="relative py-16 bg-white dark:bg-zinc-800 overflow-hidden">
                 <div class="relative px-4 sm:px-6 lg:px-8">
                     <div class="text-lg max-w-prose mx-auto">
+                        <div class="text-center">
+                            <span class="text-base text-center text-red-700 font-semibold tracking-wide uppercase dark:text-red-600">{{ date('d/m/Y', strtotime($project->created_at)) }} - </span>
+                            @foreach($project->technologies as $technologie)
+                                <span class=" items-center mx-1 px-2.5 py-0.5 rounded-md text-sm font-medium dark:bg-red-600 dark:text-zinc-900 bg-red-100 text-red-700"> {{ $technologie }} </span>
+                            @endforeach</div>
                         <h1>
-                            <span class="block text-base text-center text-red-700 font-semibold tracking-wide uppercase dark:text-red-600">{{ date('d/m/Y', strtotime($project->created_at)) }}</span>
                             <span class="mt-2 block font-title text-4xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl font-dosis dark:text-zinc-50">{{ $project->title }}</span>
                         </h1>
                         <p class="mt-8 text-center text-lg text-gray-500 leading-8 pb-5 dark:text-zinc-200 font-raleway">{{ $project->excerpt }}</p>

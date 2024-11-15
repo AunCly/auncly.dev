@@ -35,16 +35,14 @@ $qualities = [
     <div
         class="bg-cover bg-center bg-[linear-gradient(to_bottom,rgba(250,250,250,1),rgba(250,250,250,0),rgba(250,250,250,1)),url('/public/images/gaelle/fond-test-1.jpg')] dark:bg-[linear-gradient(to_bottom,rgba(24,24,27,0),rgba(24,24,27,1)),url('/public/images/bg-dark.png')]">
         <div class="container mx-auto py-10">
-            <div class="bg-max-w-7xl mx-auto flex flex-col justify-center sm:py-5 lg:pt-40 lg:pb-20 md:py-30">
-                <h1 class="text-7xl font-title font-semibold mb-20 text-center lg:text-left">
-                    <span class="hidden md:block lg:inline dark:text-zinc-50">Hello ! </span>
+            <div class="bg-max-w-7xl mx-auto flex flex-col justify-start sm:py-5 lg:pt-40 lg:pb-20 md:py-30">
+                <h1 class="text-7xl font-title font-semibold mb-20 text-left lg:text-left">
+                    <span class="hidden md:block lg:inline dark:text-zinc-50">Hello ! </span><br>
                     <span class="hidden md:block lg:inline dark:text-zinc-50">Je suis </span>
                     <span class="dark:text-zinc-50">Gaelle Henaf,</span>
                     <x-typing-gaelle />
-                    <span class="hidden md:block lg:inline dark:text-zinc-50">vivant</span>
-                    <span class="dark:text-zinc-50">à</span>
-                    <span class="underline decoration-wavy decoration-red-600 dark:decoration-red-600 block lg:inline dark:text-zinc-50">La Rochelle</span>
-                    <span class="dark:text-zinc-50">.</span>
+                    <!-- <span class="hidden md:block lg:inline dark:text-zinc-50">vivant à</span>
+                    <span class="underline decoration-wavy decoration-red-600 dark:decoration-red-600 block lg:inline dark:text-zinc-50">La Rochelle</span> -->
                 </h1>
 
                 <!-- <div class="flex items-center justify-center gap-5 flex-col md:flex-row">
@@ -82,8 +80,8 @@ $qualities = [
         <div class="flex justify-between">
             <h2 class="text-5xl font-title font-semibold dark:text-zinc-50">Mes projets</h2>
             <a href="{{ url('projects') }}" type="button"
-               class="cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-red-600 p-4 text-sm font-medium tracking-wide text-red-600 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-600"><i
-                    class="fa-duotone fa-arrow-right"></i> Voir tout les projets</a>
+               class="hidden md:block cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-red-600 p-4 text-sm font-medium tracking-wide text-red-600 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-600"><i
+                    class="fa-duotone fa-arrow-right"></i> Voir tous les projets</a>
         </div>
 
         <div class="grid grid-cold-1 md:grid-cols-2 gap-5 mt-20">
@@ -109,7 +107,11 @@ $qualities = [
                                     class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium dark:bg-red-300 dark:text-zinc-900 bg-red-100 text-red-600"> {{ $technologie }} </span>
                             @endforeach
                         </div>
-                        <p class="dark:text-zinc-50 mt-5">{{ $project->excerpt }}</p>
+                        <div class="mt-5">
+                            <p class="font-title font-bold uppercase text-red-600 dark:text-red-600 mb-2">
+                                        Résumé</p>
+                            <p class="dark:text-zinc-50">{{ $project->excerpt }}</p>
+                        </div>
                         <button type="button"
                                 class="self-end mt-5 max-w-fit cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-red-600 px-4 py-2 text-sm font-medium tracking-wide text-red-600 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-600">
                             <i class="fa-duotone fa-paper-plane mr-2"></i> Voir le projet
@@ -117,6 +119,9 @@ $qualities = [
                     </article>
                 </a>
             @endforeach
+            <a href="{{ url('projects') }}" type="button"
+               class="block md:hidden cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-red-600 p-4 text-sm font-medium tracking-wide text-red-600 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-600"><i
+                    class="fa-duotone fa-arrow-right"></i> Voir tous les projets</a>
         </div>
 
 

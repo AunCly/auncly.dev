@@ -143,7 +143,7 @@ $formations = [
     <div class="p-5 mt-5 max-w-7xl mx-auto grid grid-cols-1 lg:items-center lg:justify-items-start md:justify-items-center">
         <h2 class="dark:text-zinc-50 text-5xl font-title lg:col-span-3 col-span-1 font-semibold text-left">En bref</h2>
         <div class="lg:col-span-2 col-span-1lg:p-0">
-            <div class="py-10 col-span-1 w-96 float-right ml-10">
+            <div class="py-10 col-span-1 w-96 lg:float-right ml-10">
                 <img class="rounded-3xl" src="/images/gaelle/gaelle-henaf.jpg" alt="">
             </div>
             <p class="dark:text-zinc-50 text-zinc-600 font-normal py-5 md:text-base">
@@ -153,20 +153,20 @@ $formations = [
                 J'ai grandi avec mes parents et mes deux grands freres aux alentours de La Rochelle tout d'abord puis 3 ans en Nouvelle Caledonie. Après quelques cabanes, copains, baignades et noix de coco, nous sommes rentrés en France.
             </p>
             <p class="dark:text-zinc-50 text-zinc-600 py-5 md:text-base">
-                Passionnée depuis toujours de maths, de logique et de sciences mais surtout curieuse d'apprendre tout ce qu'il est possible d'apprendre. 
-                Wikipédia est mon ami. J'aime me cultiver mais aussi apprendre de nouvelles compétences. J'ai passé mon permis moto, j'ai appris le crochet, j'ai essayé d'apprendre à peindre, j'aimerais apprendre le piano, et plus si affinités. 
+                Passionnée depuis toujours de maths, de <strong>logique</strong> et de sciences mais surtout <strong>curieuse d'apprendre</strong> tout ce qu'il est possible d'apprendre. 
+                Wikipédia est mon ami. J'aime me cultiver mais aussi <strong>apprendre de nouvelles compétences</strong>. J'ai passé mon permis moto, j'ai appris le crochet, j'ai essayé d'apprendre à peindre, j'ai fait du Rugby, de la zumba en passant par le Krav Maga, j'aimerais apprendre le piano, ... et plus si affinités. 
             </p>
             <p class="dark:text-zinc-50 text-zinc-600 py-5 md:text-base">
-                Au niveau scolaire je me suis naturellement orientée vers un Bac S, spécialité mathématiques à la fois car j'adorais ca mais aussi pour me laisser le plus de portes ouvertes. Puis je me suis dirigée vars un DUT de Statistiques que j'ai malheureusement du abandonner pour des raisons personelles.<br>
-                Je me suis ensuite inscrite à la faculté de La Rochelle en Informatique afin de ne pas perdre mon année. Après validation de ma première année, je me suis redirigée vers un BTS Assistant Technique Ingénieur car j'avais besoin de quelques choses de plus concret de la fac.<br>
-                Ma matière préférée : la programmation d'automates. Donc je me suis intéressée à la programmation informatique à la fin de mon BTS qui allait à la fois les connaissances acquises lors de mon année de face et lors de mon BTS. 
+                Au niveau scolaire je me suis naturellement orientée vers un Bac S, spécialité mathématiques à la fois car j'adorais ca mais aussi pour me laisser le plus de portes ouvertes possible. Puis je me suis dirigée vars un DUT de Statistiques que j'ai malheureusement du abandonner pour des raisons personelles.<br>
+                Je me suis ensuite inscrite à la faculté de La Rochelle en <strong>Licence Informatique</strong> afin de ne pas perdre mon année. Après validation de ma première année, je me suis redirigée vers un BTS Assistant Technique Ingénieur car j'avais besoin de quelques choses de plus concret que la fac.<br>
+                Ma matière préférée : la programmation d'automates. Donc je me suis intéressée à la programmation informatique à la fin de mon BTS qui alliait à la fois les connaissances acquises lors de mon année de face et lors de mon BTS. 
             </p>
             <p class="dark:text-zinc-50 text-zinc-600 py-5 md:text-base">
-                C'est ainsi que j'obtient mon premier poste d'intégratrice de maquettes travaillant en binome avec deux graphismes. 
-                Cela m'a permis d'acquérir les compétences graphiques qui manquait à l'épanouissmenet de mon côté créatif.
+                C'est ainsi que j'obtient mon premier poste d'intégratrice de maquettes travaillant en binome avec deux graphistes. 
+                Cela m'a permi d'acquérir les compétences graphiques qui manquait à l'épanouissmenet de mon <strong>côté créatif</strong>.
             </p>
             <p class="dark:text-zinc-50 text-zinc-600 py-5 md:text-base">
-                2023 - en plein tournant professionnel - je questionne et je me dirige vers un bilan de compétences. Les sites c'est bien mais j'ai fait le tour. Il me fautun nouveau challenge et pourquoi pas revenir aux bases ; mes études de statistiques ! Avec en plus mon stack technique, un  nouveau métier s'impose : La Data Analyse ! Le bilan de compétences valide cet orientation, je me redirige donc vers un formation pour complétencer mes compétences. Et me voici postulant en Data Analyst aux alentours de La Rochelle et Niort. 
+                2023 - en plein tournant professionnel - je questionne et je me dirige vers un bilan de compétences. Les sites c'est bien mais j'ai fait le tour. Il me faut un nouveau challenge et pourquoi pas revenir aux bases ; mes études de statistiques ! Avec, en plus, mon stack technique, un nouveau domaine s'impose : La <strong>Data Analyse</strong> ! Le bilan de compétences valide cet orientation, je me redirige donc vers un formation pour complétencer mes compétences. Et me voici postulant en Data Analyst aux alentours de La Rochelle et Niort. 
             </p>
         </div>
     </div>

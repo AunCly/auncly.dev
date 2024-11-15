@@ -3,7 +3,7 @@
 <span
     x-data="{
         text: '',
-        textArray : ['Data Analyst,'],
+        textArray : ['Data Analyst'],
         textIndex: 0,
         charIndex: 0,
         typeSpeed: 110,
