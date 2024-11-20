@@ -53,9 +53,11 @@ render(function (View $view, string $slug) {
                         <div class="text-justify"></div>
                         {!! $project->html !!}
 
-                        <div class="hidden md:block mt-10">
-                            <livewire:carousel :medias="$project->getMedia('project_images')"></livewire:carousel>
-                        </div>
+                        @if($project->getMedia('project_images')->count() > 0)
+                            <div class="hidden md:block mt-10">
+                                <livewire:carousel :medias="$project->getMedia('project_images')"></livewire:carousel>
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
