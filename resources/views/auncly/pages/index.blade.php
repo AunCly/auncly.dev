@@ -78,7 +78,7 @@ $projects = Project::with('user')->whereHas('user', function($query){
             <h2 class="text-5xl font-title font-semibold dark:text-zinc-50">Derniers articles</h2>
             <a href="{{ route('articles') }}" type="button"
                class="hidden md:block cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-blue-700 p-4 text-sm font-medium tracking-wide text-blue-700 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-blue-300 dark:text-blue-300 dark:focus-visible:outline-blue-800"><i
-                    class="fa-duotone fa-arrow-right"></i> Voir tout les articles</a>
+                    class="fa-duotone fa-arrow-right"></i> Voir tous les articles</a>
         </div>
         <div class="mt-20">
             @foreach($articles->take(3) as $article)
@@ -109,7 +109,7 @@ $projects = Project::with('user')->whereHas('user', function($query){
         <div class="md:hidden mt-10">
             <a href="{{ route('articles') }}" type="button"
                class="cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-blue-700 p-4 text-sm font-medium tracking-wide text-blue-700 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-blue-300 dark:text-blue-300 dark:focus-visible:outline-blue-800"><i
-                    class="fa-duotone fa-arrow-right"></i> Voir tout les articles</a>
+                    class="fa-duotone fa-arrow-right"></i> Voir tous les articles</a>
         </div>
     </div>
 
@@ -118,7 +118,7 @@ $projects = Project::with('user')->whereHas('user', function($query){
             <h2 class="text-5xl font-title font-semibold dark:text-zinc-50">Projets</h2>
             <a href="{{ route('projects') }}" type="button"
                class="cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-blue-700 p-4 text-sm font-medium tracking-wide text-blue-700 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-blue-300 dark:text-blue-300 dark:focus-visible:outline-blue-800"><i
-                    class="fa-duotone fa-arrow-right"></i> Voir tout les projets</a>
+                    class="fa-duotone fa-arrow-right"></i> Voir tous les projets</a>
         </div>
 
         <div class="grid grid-cold-1 md:grid-cols-2 gap-5 mt-20">

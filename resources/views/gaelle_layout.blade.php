@@ -33,14 +33,14 @@
     <meta property="og:url" content="https://data.gaelle-henaf.fr/" />
     <meta property="og:title" content="Gaëlle Henaf - Data Analyst" />
     <meta property="og:description" content="Hello ! Je suis Gaëlle Henaf, Data Analyst à La Rochelle!" />
-    <meta property="og:image" content="https://auncly.dev/images/meta.png" />
+    <meta property="og:image" content="https://data.gaelle-henaf.fr/images/gaelle/meta-gaelle.png"" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://data.gaelle-henaf.fr/" />
     <meta property="twitter:title" content="Gaëlle Henaf - Data Analyst" />
-    <meta property="twitter:description" content="Hello ! Je suis Gaëlle Henaf, Data Analyst à La Rochelle!" />
-    <meta property="twitter:image" content="https://auncly.dev/images/meta.png" />
+    <meta property="twitter:description" content="Hello ! Je suis Gaëlle Henaf, Data Analyst à La Rochelle !" />
+    <meta property="twitter:image" content="https://data.gaelle-henaf.fr/images/gaelle/meta-gaelle.png" />
 
 	<!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,8 +55,8 @@
 <body class="bg-zinc-50 dark:bg-zinc-900">
 	<div class="container mx-auto md:py-6">
 		<nav class="grid md:grid-cols-2 grid-cols-1 p-3" aria-label="Breadcrumb">
-			<a href="{{ url('/') }}" class="md:flex md:flex-row hidden md:content-end flex-wrap">
-				<img src="{{ url('/images/gaelle/logo-gh.png') }}" class="w-24 float-left">
+			<a href="{{ url('/') }}" class="md:flex md:flex-row hidden md:content-end md:items-end	flex-wrap">
+				<img src="{{ url('/images/gaelle/logo-gh.png') }}" class="w-24">
 				<div class="md:mt-16px flex flex-col">
 					<span class="text-3xl font-title dark:text-zinc-50">Gaelle Henaf</span>
 					<span class="text-3xl md:text-sm dark:text-zinc-50">Data Analyst</span>

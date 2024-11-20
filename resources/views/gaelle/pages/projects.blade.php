@@ -41,9 +41,11 @@ $projects = Project::with('user')->whereHas('user', function($query){
                                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium dark:bg-red-600 dark:text-zinc-900 bg-red-100 text-red-700"> {{ $technologie }} </span>
                             @endforeach
                         </div>
-                        <p class="font-title font-bold uppercase text-red-700 dark:text-red-600 mb-2">
-                                Résumé</p>
-                        <p class="dark:text-zinc-50 mt-5">{{ $project->excerpt }}</p>
+                        <div class="mt-5">
+                            <p class="font-title font-bold uppercase text-red-700 dark:text-red-600 mb-2">
+                                    Résumé</p>
+                            <p class="dark:text-zinc-50">{{ $project->excerpt }}</p>
+                        </div>
                         <button type="button"
                                 class="self-end mt-5 max-w-fit cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-red-700 px-4 py-2 text-sm font-medium tracking-wide text-red-700 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-700">
                             <i class="fa-duotone fa-paper-plane mr-2"></i> Voir le projet
