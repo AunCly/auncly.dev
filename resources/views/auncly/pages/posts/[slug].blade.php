@@ -49,9 +49,9 @@ render(function (View $view, string $slug) {
                         <img class="rounded-xl mb-5 dark:text-zinc-50"
                              src="{{ $article->getFirstMediaUrl('article_main') }}" alt="">
                         {!! $article->html !!}
-                        @if($project->getMedia('project_images')->count() > 0)
+                        @if($article->getMedia('article_images')->count() > 0)
                             <div class="hidden md:block mt-10">
-                                <livewire:carousel :medias="$project->getMedia('project_images')"></livewire:carousel>
+                                <livewire:carousel :medias="$article->getMedia('article_images')"></livewire:carousel>
                             </div>
                         @endif
                     </div>
