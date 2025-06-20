@@ -34,7 +34,7 @@ $projects = Project::with('user')->whereHas('user', function($query){
                 </h1>
 
                 <div class="flex items-center justify-center gap-5 flex-col md:flex-row">
-                    <a target="_blank" href="/public/images/cv_aurelien_clugery.pdf"
+                    <a target="_blank" href="/images/cv_aurelien_clugery.pdf"
                             class="max-w-fit cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-blue-700 p-4 text-sm font-medium tracking-wide text-blue-700 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-blue-300 dark:text-blue-300 dark:focus-visible:outline-blue-300">
                         <i class="fa-duotone fa-download mr-2"></i> Télécharger mon CV
                     </a>
