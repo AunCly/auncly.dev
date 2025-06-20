@@ -49,7 +49,7 @@ render(function (View $view, string $slug) {
                             <span class="mt-2 block font-title text-4xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl font-dosis dark:text-zinc-50">{{ $project->title }}</span>
                         </h1>
                         <p class="mt-8 text-center text-lg text-gray-500 leading-8 pb-5 dark:text-zinc-200 font-raleway">{{ $project->excerpt }}</p>
-                        <p>
+                        <p class="my-8 text-center">
                             @foreach($project->technologies as $technologie)
                                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium dark:bg-blue-300 dark:text-zinc-900 bg-blue-100 text-blue-800"> {{ $technologie }} </span>
                             @endforeach
