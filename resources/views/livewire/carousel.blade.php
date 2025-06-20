@@ -6,7 +6,6 @@
         @foreach($medias as $media)
             {
                 'photo': '{{ $media->getUrl() }}',
-                'alt': 'Photo of Mountains 10',
             },
         @endforeach
         ],
@@ -52,7 +51,7 @@
             @keydown.window.escape="imageGalleryClose"
             x-trap.inert.noscroll="imageGalleryOpened"
             class="fixed inset-0 z-[99] flex items-center justify-center bg-black bg-opacity-50 select-none cursor-zoom-out" x-cloak>
-            <div class="relative flex items-center justify-center w-11/12 xl:w-4/5 h-11/12">
+            <div class="relative flex items-center justify-center w-11/12 xl:w-4/5 h-11/12 h-[90vh]">
                 <div @click="$event.stopPropagation(); $dispatch('image-gallery-prev')" class="absolute left-0 flex items-center justify-center text-white translate-x-10 rounded-full cursor-pointer xl:-translate-x-24 2xl:-translate-x-32 bg-white/10 w-14 h-14 hover:bg-white/20">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>
                 </div>
