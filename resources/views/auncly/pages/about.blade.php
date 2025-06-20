@@ -23,16 +23,25 @@ $tools = [
 $experiences = [
     [
         'image' => 'images/works/rhinos.png',
-        'title' => 'Développeur Web',
+        'title' => 'Lead Développeur Backend',
         'company' => 'Groupe Rhinos',
-        'date' => 'Août 2017 - Maintenant',
+        'date' => 'Avril 2023 - Maintenant',
+        'place' => 'La Rochelle (17)',
+        'missions' => [
+            'Formateur en interne au framework Laravel',
+            'Développement et maintenance de la base socle et d\'outils à destination des développeurs',
+        ],
+    ],
+    [
+        'image' => 'images/works/rhinos.png',
+        'title' => 'Développeur Backend',
+        'company' => 'Groupe Rhinos',
+        'date' => 'Août 2017 - Avril 2023',
         'place' => 'La Rochelle (17)',
         'missions' => [
             'Maintenance et mises à jour de la plateforme Stimbiz',
             'Développements spécifiques et scripts de mises à jours',
             'Développement d\'API pour application mobile, et application front-end',
-            'Formateur en interne au framework Laravel',
-            'Développement et maintenance de la base socle et d\'outils à destination des développeurs'
         ],
     ],
     [
