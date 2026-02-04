@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace App\Filament\Resources\Projects;
 
 use Filament\Schemas\Schema;
 use Filament\Schemas\Components\Utilities\Set;
@@ -9,22 +9,20 @@ use Filament\Actions\ViewAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
-use App\Filament\Resources\ArticleResource\Pages\ListArticles;
-use App\Filament\Resources\ArticleResource\Pages\CreateArticle;
-use App\Filament\Resources\ArticleResource\Pages\ViewArticle;
-use App\Filament\Resources\ArticleResource\Pages\EditArticle;
-use App\Filament\Resources\ArticleResource\Pages;
-use App\Filament\Resources\ArticleResource\RelationManagers;
-use App\Models\Article;
-use App\Models\Category;
+use App\Filament\Resources\Projects\Pages\ListProjects;
+use App\Filament\Resources\Projects\Pages\CreateProject;
+use App\Filament\Resources\Projects\Pages\ViewProject;
+use App\Filament\Resources\Projects\Pages\EditProject;
+use App\Filament\Resources\ProjectResource\Pages;
+use App\Filament\Resources\ProjectResource\RelationManagers;
+use App\Models\Project;
 use Filament\Forms;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\MarkdownEditor;
-use Filament\Forms\Components\Radio;
-use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
+use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -33,9 +31,9 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Str;
 
-class ArticleResource extends Resource
+class ProjectResource extends Resource
 {
-    protected static ?string $model = Article::class;
+    protected static ?string $model = Project::class;
 
     protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -45,37 +43,31 @@ class ArticleResource extends Resource
             ->components([
                 Hidden::make('user_id')->default(auth()->id()),
                 SpatieMediaLibraryFileUpload::make('main')
-                    ->collection('article_main')
+                    ->collection('project_main')
                     ->columnSpanFull(),
                 TextInput::make('title')
-                    ->live()
                     ->afterStateUpdated(fn (Set $set, ?string $state) => $set('slug', Str::slug($state)))
                     ->required(),
                 TextInput::make('slug'),
-                DateTimePicker::make('published_at'),
-                Select::make('categories')
-                    ->relationship(name: 'categories', titleAttribute: 'name')
-                    ->searchable()
-                    ->preload()
-                    ->multiple()
-                    ->createOptionForm([
-                        TextInput::make('name')->required(),
-                    ]),
-                Select::make('tags')
-                    ->relationship(name: 'tags', titleAttribute: 'name')
-                    ->searchable()
-                    ->preload()
-                    ->multiple()
-                    ->createOptionForm([
-                        TextInput::make('name')->required(),
-                    ]),
-                Radio::make('is_published')
-                    ->options([
-                        0 => 'Brouillon',
-                        1 => 'Publié',
-                    ])
-                    ->default('draft')
+                TextInput::make('duration')
                     ->required(),
+                Select::make('categories')
+                    ->searchable()
+                    ->preload()
+                    ->relationship(name: 'categories', titleAttribute: 'name')
+                    ->multiple()
+                    ->createOptionForm([
+                        TextInput::make('name')->required(),
+                    ]),
+                TagsInput::make('technologies'),
+                Select::make('tags')
+                    ->searchable()
+                    ->preload()
+                    ->relationship(name: 'tags', titleAttribute: 'name')
+                    ->multiple()
+                    ->createOptionForm([
+                        TextInput::make('name')->required(),
+                    ]),
                 TextInput::make('excerpt')
                     ->required()
                     ->columnSpanFull(),
@@ -84,7 +76,7 @@ class ArticleResource extends Resource
                     ->columnSpanFull(),
                 SpatieMediaLibraryFileUpload::make('images')
                     ->multiple()
-                    ->collection('article_images')
+                    ->collection('project_images')
                     ->columnSpanFull(),
             ]);
     }
@@ -98,7 +90,11 @@ class ArticleResource extends Resource
             ->columns([
                 TextColumn::make('title')
                     ->searchable(),
+                TextColumn::make('slug')
+                    ->searchable(),
                 TextColumn::make('excerpt')
+                    ->searchable(),
+                TextColumn::make('duration')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()
@@ -133,10 +129,10 @@ class ArticleResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => ListArticles::route('/'),
-            'create' => CreateArticle::route('/create'),
-            'view' => ViewArticle::route('/{record}'),
-            'edit' => EditArticle::route('/{record}/edit'),
+            'index' => ListProjects::route('/'),
+            'create' => CreateProject::route('/create'),
+            'view' => ViewProject::route('/{record}'),
+            'edit' => EditProject::route('/{record}/edit'),
         ];
     }
 }

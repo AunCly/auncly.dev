@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Filament\Resources\ProjectResource\Pages;
+namespace App\Filament\Resources\Articles\Pages;
 
 use Filament\Actions\ViewAction;
 use Filament\Actions\DeleteAction;
-use App\Filament\Resources\ProjectResource;
+use App\Filament\Resources\Articles\ArticleResource;
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
 
-class EditProject extends EditRecord
+class EditArticle extends EditRecord
 {
-    protected static string $resource = ProjectResource::class;
+    protected static string $resource = ArticleResource::class;
 
     protected function getHeaderActions(): array
     {
