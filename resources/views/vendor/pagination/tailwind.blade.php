@@ -2,7 +2,7 @@
     <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}" class="flex items-center justify-between">
 
         <div class="flex justify-between flex-1 sm:hidden">
-            <ul class="flex flex-shrink-0 items-center gap-2 text-sm font-medium">
+            <ul class="flex shrink-0 items-center gap-2 text-sm font-medium">
                 @if ($paginator->onFirstPage())
                     <li>
                     <span class="flex items-center rounded-2xl p-1 text-gray-500 dark:text-slate-300 dark:hover:text-blue-800" aria-label="previous page">
@@ -46,7 +46,7 @@
         </div>
 
         <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
-            <ul class="flex flex-shrink-0 items-center gap-2 text-sm font-medium">
+            <ul class="flex shrink-0 items-center gap-2 text-sm font-medium">
                 {{-- Previous Page Link --}}
                 @if ($paginator->onFirstPage())
                     <li>

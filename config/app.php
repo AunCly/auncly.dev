@@ -15,6 +15,8 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'anthos_token' => env('ANTHOS_TOKEN'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
