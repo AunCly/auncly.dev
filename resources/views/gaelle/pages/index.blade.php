@@ -47,7 +47,7 @@ $qualities = [
 
                 <!-- <div class="flex items-center justify-center gap-5 flex-col md:flex-row">
                     <button type="button"
-                            class="hidden max-w-fit cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-blue-700 p-4 text-sm font-medium tracking-wide text-blue-700 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-600">
+                            class="hidden max-w-fit cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-blue-700 p-4 text-sm font-medium tracking-wide text-blue-700 transition hover:opacity-75 text-center focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-600">
                         <i class="fa-duotone fa-download mr-2"></i> Télécharger mon CV
                     </button>
                     <ol class="flex gap-6 max-w-fit">
@@ -80,7 +80,7 @@ $qualities = [
         <div class="flex justify-between">
             <h2 class="text-5xl font-title font-semibold dark:text-zinc-50">Mes projets</h2>
             <a href="{{ url('projects') }}" type="button"
-               class="hidden md:block cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-red-600 p-4 text-sm font-medium tracking-wide text-red-600 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-600"><i
+               class="hidden md:block cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-red-600 p-4 text-sm font-medium tracking-wide text-red-600 transition hover:opacity-75 text-center focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-600"><i
                     class="fa-duotone fa-arrow-right"></i> Voir tous les projets</a>
         </div>
 
@@ -113,14 +113,14 @@ $qualities = [
                             <p class="dark:text-zinc-50">{{ $project->excerpt }}</p>
                         </div>
                         <button type="button"
-                                class="self-end mt-5 max-w-fit cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-red-600 px-4 py-2 text-sm font-medium tracking-wide text-red-600 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-600">
+                                class="self-end mt-5 max-w-fit cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-red-600 px-4 py-2 text-sm font-medium tracking-wide text-red-600 transition hover:opacity-75 text-center focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-600">
                             <i class="fa-duotone fa-paper-plane mr-2"></i> Voir le projet
                         </button>
                     </article>
                 </a>
             @endforeach
             <a href="{{ url('projects') }}" type="button"
-               class="block md:hidden cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-red-600 p-4 text-sm font-medium tracking-wide text-red-600 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-600"><i
+               class="block md:hidden cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-red-600 p-4 text-sm font-medium tracking-wide text-red-600 transition hover:opacity-75 text-center focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-red-600 dark:text-red-600 dark:focus-visible:outline-red-600"><i
                     class="fa-duotone fa-arrow-right"></i> Voir tous les projets</a>
         </div>
 

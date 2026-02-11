@@ -33,7 +33,7 @@ $articles = Article::with(['user'])->where('is_published', 1)->orderBy('publishe
                                 <span class="text-4xl font-title font-semibold">{{ $article['title'] }}</span>
                                 <span class="text-lg md:text-left mt-5">{{ $article->excerpt }}</span>
                                 <button type="button"
-                                        class="mt-5 max-w-fit cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-blue-700 px-4 py-2 text-sm font-medium tracking-wide text-blue-700 transition hover:opacity-75 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-blue-300 dark:text-blue-300 dark:focus-visible:outline-blue-800"><i
+                                        class="mt-5 max-w-fit cursor-pointer whitespace-nowrap bg-transparent rounded-2xl border border-blue-700 px-4 py-2 text-sm font-medium tracking-wide text-blue-700 transition hover:opacity-75 text-center focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700 active:opacity-100 active:outline-offset-0 disabled:opacity-75 disabled:cursor-not-allowed dark:border-blue-300 dark:text-blue-300 dark:focus-visible:outline-blue-800"><i
                                             class="fa-duotone fa-paper-plane mr-2"></i> Lire l'article</button>
                             </span>
                         </div>
