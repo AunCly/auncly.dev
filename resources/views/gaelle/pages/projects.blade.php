@@ -7,7 +7,7 @@ name('projects');
 
 $projects = Project::with('user')->whereHas('user', function($query){
     $query->where('email', 'gaelle.henaf@gmail.com');
-})->get();
+})->where('is_published', 1)->get();
 
 ?>
 
@@ -21,7 +21,7 @@ $projects = Project::with('user')->whereHas('user', function($query){
         </div>
 
         <div class="grid grid-cold-1 md:grid-cols-2 gap-5 mt-20">
-            @foreach($projects->take(2) as $project)
+            @foreach($projects as $project)
                 <a class="dark:bg-zinc-800 hover:transition-all hover:duration-300 bg-white hover:shadow-xl hover:shadow-red-700/10 dark:hover:shadow-red-600/10 rounded-xl p-5 hover:cursor-pointer"
                    href="{{ url('/projects/' . $project->slug) }}">
                     <article class="flex flex-col">
