@@ -7,7 +7,7 @@ name('projects');
 
 $projects = Project::with('user')->whereHas('user', function($query){
     $query->where('email', 'gaelle.henaf@gmail.com');
-})->where('is_published', 1)->get();
+})->where('is_published', 1)->orderBy('created_at', 'desc')->get();
 
 ?>
 
