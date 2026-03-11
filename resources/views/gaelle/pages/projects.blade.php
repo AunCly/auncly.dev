@@ -25,9 +25,9 @@ $projects = Project::with('user')->whereHas('user', function($query){
                 <a class="dark:bg-zinc-800 hover:transition-all hover:duration-300 bg-white hover:shadow-xl hover:shadow-red-700/10 dark:hover:shadow-red-600/10 rounded-xl p-5 hover:cursor-pointer"
                    href="{{ url('/projects/' . $project->slug) }}">
                     <article class="flex flex-col">
-                        <div class="rounded-xl col-span-1 relative ease-in-out transition-all duration-300 hover:before:ease-in-out hover:before:transition-all hover:before:duration-300 before:absolute before:rounded-lg before:left-0 before:right-0 before:top-0 before:z-10 before:h-full before:w-full dark:hover:before:bg-transparent hover:before:bg-transparent dark:before:bg-red-600 before:bg-red-700 before:opacity-60">
+                        <div class="rounded-xl col-span-1 relative ease-in-out transition-all duration-300 hover:before:ease-in-out hover:before:transition-all hover:before:duration-300 before:absolute before:rounded-lg before:left-0 before:right-0 before:top-0 before:z-10 before:h-full before:w-full dark:hover:before:bg-transparent hover:before:bg-transparent dark:before:bg-red-600 before:bg-red-700 before:opacity-60 h-64 overflow-hidden">
                             <img alt="" src="{{ $project->getFirstMediaUrl('project_main') }}"
-                                 class="rounded-xl w-auto h-auto">
+                                 class="rounded-xl w-full h-full object-cover">
                         </div>
                         <h3 class="dark:text-zinc-50 font-title text-4xl mt-5">{{ $project->title }}</h3>
                         <div class="mt-5">
