@@ -48,9 +48,11 @@ render(function (View $view, string $slug) {
                             <span class="text-base text-center text-red-700 font-semibold tracking-wide uppercase dark:text-red-600">{{ date('d/m/Y', strtotime($project->created_at)) }}</span>
                             <br>
                             <br>
-                            @foreach($project->technologies as $technologie)
-                                <span class="items-center mt-2 mx-1 px-2.5 py-0.5 rounded-md text-sm font-medium dark:bg-red-600 dark:text-zinc-900 bg-red-100 text-red-700"> {{ $technologie }} </span>
-                            @endforeach</div>
+                            <div class="flex flex-wrap justify-center gap-x-2 gap-y-2">
+                                @foreach($project->technologies as $technologie)
+                                    <span class="items-center px-2.5 py-0.5 rounded-md text-sm font-medium dark:bg-red-600 dark:text-zinc-900 bg-red-100 text-red-700"> {{ $technologie }} </span>
+                                @endforeach
+                            </div></div>
                         <h1>
                             <span class="mt-2 block font-title text-4xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl font-dosis dark:text-zinc-50">{{ $project->title }}</span>
                         </h1>
